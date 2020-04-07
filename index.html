@@ -2,11 +2,12 @@
 <html>
 <head>
 	<title>InfoChincha</title>
-	
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
 	<style type="text/css">
 		*{
 			margin:0px;
 			padding: 0px;
+			font-family: 'Baloo Thambi 2', cursive;
 		}
 		/*nav{
 			background: #8718cd;
@@ -15,7 +16,7 @@
 		}*/
 
 		nav{
-			margin: 0 auto;
+			margin-right:   0 auto;
 			height: 40px;
 			width: 35%;
 			text-align: center;
@@ -64,12 +65,31 @@
 			display: flex;
 			justify-content: center;
     		flex-direction: column;
+    		text-align: center;
     		font-family: Arial, sans-serif;
     		font-size: 15px;
 		}
 		footer p{
 			position: relative;
 			
+		}
+		body{
+
+		}
+		#mensaje{
+			position: relative;
+			top:150px;
+			margin-left: auto;
+  			margin-right: auto;
+			
+			border:solid 1px red;
+    		width: 60%;
+    		height: 100px;z-index: 1000;
+    		display: flex;
+			justify-content: center;
+    		flex-direction: column;
+    		text-align: center;
+
 		}
 		
 	</style>
@@ -107,11 +127,13 @@
         attribution=setup_tool
         page_id="630931393989207"
   theme_color="#5318cd"
-  logged_in_greeting="Hola qué tal, dinos, ¿En qué podemos ayudarte?"
-  logged_out_greeting="Hola qué tal, dinos, ¿En qué podemos ayudarte?">
+  logged_in_greeting="Hola, nuestra web se encuentra en construcción, pero dinos, ¿En qué podemos ayudarte?"
+  logged_out_greeting="Hola, nuestra web se encuentra en construcción, pero dinos, ¿En qué podemos ayudarte?">
       </div>
 	<body>
-		
+		<div id="mensaje">
+			<p>EN CONSTRUCCIÓN</p>
+		</div>
 	</body>
 	<footer><center><p>DERECHOS RESERVADOS</p></center></footer>
 </body>
