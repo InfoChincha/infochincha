@@ -6,37 +6,85 @@
 	<style type="text/css">
 		*{
 			margin:0px;
+			padding: 0px;
+		}
+		/*nav{
+			background: #8718cd;
+			height: 40px;
+			width: 100%;
+		}*/
+
+		nav{
+			margin: 0 auto;
+			height: 40px;
+			width: 35%;
+			text-align: center;
+			border-bottom:solid #999999 1px;
+		}
+		
+		ul{
+			
+			display: inline-block;
+			position: relative;
+			top:28%;
+			
+			
+
+		}
+		a{
+			text-decoration: none;
+		
+			
+			color: #999999;
+			transition: 0.5s color;
+			
+		}
+		a:hover{
+			color: #5318cd;
+		}
+		li{
+			
+			padding: 8px;
+			list-style: none;
+			display: inline;
+			text-align: center;
+			
+			font-family: Arial, sans-serif;
+			width: 10px;
+			
 		}
 		footer{
 			background: #5318cd;
 			position: absolute;
 			bottom:0px;
 			width:100%;
-			height: 3%;
+			height: 5%;
+			color: white;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+    		flex-direction: column;
+    		font-family: Arial, sans-serif;
+    		font-size: 15px;
 		}
-		nav{
-			background: #8718cd;
-			height: 20%;
+		footer p{
+			position: relative;
+			
 		}
-		li{
-			list-style: none;
-		}
-		ol{
-
-		}
+		
 	</style>
-	<nav>
-		<ol>
-			<li>ITEM</li>
-			<li>ITEM</li>
-			<li>ITEM</li>
-			<li>ITEM</li>
-			<li>ITEM</li>
-		</ol>
-	</nav>
+	<header><nav>
+		<ul>
+			<a href="#"><li>HOME</li></a>
+			<a href="#"><li>ITEM</li></a>
+			<a href="#"><li>HOME</li></a>
+			<a href="#"><li>QUIÉNES SOMOS</li></a>
+			<a href="#"><li>CONTACTO</li></a>
+		</ul>
+	</nav></header>
 </head>
 <body>
 	<body></body>
-	<footer><center>DERECHOS RESERVADOS</center></footer>
+	<footer><center><p>DERECHOS RESERVADOS</p></center></footer>
 </body>
 </html>
