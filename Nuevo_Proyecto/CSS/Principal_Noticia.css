@@ -1,0 +1,214 @@
+.noticia-container-cover{
+    width: 100%;
+    height: 450px;
+    position: relative;
+    margin-top: 80px;
+    background-image: url(../IMG/infochinchao.png);
+    background-position: bottom;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;   
+}
+
+/*Contenedor de categoria*/
+input[type="radio"]{
+    display: none;
+}
+
+.container-category{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    background: #8E2DE2;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 6px;
+}
+
+.container-category label{
+    padding: 6px 40px;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.container-category label:hover{
+    opacity: 0.8;
+}
+
+
+/*Post - publicaciones*/
+.container-post{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.posts{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+
+    margin-top: 20px;
+    padding: 20px;
+
+}
+
+.posts .post{
+    background: #fff;
+    box-shadow: 0 0 20px -20px black;
+    border-radius: 6px;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.posts .post .ctn-img{
+    width: 100%;
+}
+
+.posts .post .ctn-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.posts .post h2{
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 0px 20px;
+}
+
+.post span{
+    display: block;
+    margin-top: 10px;
+    padding: 0px 20px;
+}
+
+.ctn-tag{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 16px;
+    margin-top: 10px;
+}
+
+.ctn-tag li{
+    list-style: none;
+    font-size: 14px;
+    margin: 4px;
+    padding: 6px 10px;
+    background: #93849E;
+    color: #fff;
+    cursor: default;
+}
+
+.post button{
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px 50px;
+    font-size: 16px;
+    color: #fff;
+    background: #4A05B3;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.post button:hover{
+    opacity: 0.9;
+}
+
+/*sistema de filtrado*/
+
+[value="TODOS"]:checked ~ .posts .post[data-category]{
+    display: block ;
+}
+
+[value="PROVINCIA"]:checked ~ .posts .post:not([data-category~="PROVINCIA"]),
+[value="REGION"]:checked ~ .posts .post:not([data-category~="REGION"]),
+[value="NACIONAL"]:checked ~ .posts .post:not([data-category~="NACIONAL"]),
+[value="INTERNACIONAL"]:checked ~ .posts .post:not([data-category~="INTERNACIONAL"]),
+[value="Covid_19"]:checked ~ .posts .post:not([data-category~="Covid_19"]){
+    display: none;
+}
+
+[value="TODOS"]:checked ~ .container-category [for="TODOS"],
+[value="PROVINCIA"]:checked ~ .container-category [for="PROVINCIA"],
+[value="REGION"]:checked ~ .container-category [for="REGION"],
+[value="NACIONAL"]:checked ~ .container-category [for="NACIONAL"],
+[value="INTERNACIONAL"]:checked ~ .container-category [for="INTERNACIONAL"],
+[value="Covid_19"]:checked ~ .container-category [for="Covid_19"]{
+    /*background: #ECECEC;*/
+    text-decoration-line: underline;
+    color: #E3DAFF;
+}
+
+
+@media screen and (max-width: 1300px){
+    .noticia-container-cover{
+        width: 100%;
+        height: 420px;
+        position: relative;
+        margin-top: 80px;    
+        background-position: bottom;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;   
+    }
+
+    .posts{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 1020px){
+
+    .noticia-container-cover{
+        width: 100%;
+        height: 380px;
+        position: relative;
+        margin-top: 80px;      
+        background-position: bottom;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;   
+    }
+
+    .posts{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 750px){
+
+    .posts{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 580px){
+    .noticia-container-cover{
+        width: 100%;
+        height: 280px;
+        position: relative;
+        margin-top: 80px;      
+        background-position: bottom;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;   
+    }
+
+    .posts{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .container-category{
+        max-width: 315px;
+        width: 100%;
+        position: relative;
+        margin-left: 20px;
+        border-radius: 6px;
+    }
+
+}
