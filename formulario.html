@@ -3,6 +3,16 @@
 $con = mysql_connect('infochincha20.mysql.database.azure.com','infochincha','Info_chincha');
 mysql_select_db('participante', $con);
 
+$query = 'select * from participante';
+	
+	$result = mysql_query($query);
+	
+	if($result){
+		while($row = mysql_fetch_array($result)){
+			$name = $row["$nombres"];
+			echo "Nombre: ".$name."br/>";
+		}
+	}
  ?>
 <!DOCTYPE html>
 <html>
