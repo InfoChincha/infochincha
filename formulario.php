@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // $con = mysql_connect('infochincha20.mysql.database.azure.com','infochincha','Info_chincha');
 // mysql_select_db('participante', $con);
@@ -15,7 +15,7 @@
 	
 
 	$conexion = mysqli_connect( 'infochincha20.mysql.database.azure.com', 'infochincha', 'Info_chincha' ) or die ("No se ha podido conectar al servidor de Base de datos");
- ?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
