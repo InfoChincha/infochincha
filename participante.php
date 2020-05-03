@@ -8,13 +8,13 @@ $link = new mysqli("infochincha20.mysql.database.azure.com",$username, $password
 if (!$link) {
       die("Connection failed: " . mysqli_connect_error());
 }
-$consulta= "SELECT * FROM participante";
+// $consulta= "SELECT * FROM participante";
 
-$datos=mysqli_query($consulta);
+// $datos=mysqli_query($link,$consulta);
 
-while (mysqli_fetch_array($datos)) {
-	echo $fila['nombres'];
-}
+// while ($fila =mysqli_fetch_array($datos)) {
+// 	echo $fila['nombres'];
+// }
  ?>
 <!DOCTYPE html>
 <html>
@@ -66,7 +66,7 @@ while (mysqli_fetch_array($datos)) {
         	background: red;
         	position: relative;
         	width: 15%;
-        	height: 120%;
+        	height: 100%;
         }
     </style>
 </head>
