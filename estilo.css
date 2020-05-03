@@ -1,6 +1,13 @@
 *{
 			font-family: 'Manrope', sans-serif;
 		}
+
+		body{
+			background: #7F00FF;  
+			background: -webkit-linear-gradient(to right, #E100FF, #7F00FF); 
+			background: linear-gradient(to right, #E100FF, #7F00FF); 
+
+		}
 		table{
 			margin:auto;
 			position: relative;
