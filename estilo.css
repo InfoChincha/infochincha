@@ -3,9 +3,10 @@
 		}
 
 		body{
-			background: #7F00FF;  
-			background: -webkit-linear-gradient(to right, #E100FF, #7F00FF); 
-			background: linear-gradient(to right, #E100FF, #7F00FF); 
+			background: #ED213A; 
+			background: -webkit-linear-gradient(to right, #93291E, #ED213A); 
+			background: linear-gradient(to right, #93291E, #ED213A); 
+
 
 		}
 		table{
