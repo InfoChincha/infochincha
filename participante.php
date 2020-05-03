@@ -8,6 +8,13 @@ $link = new mysqli("infochincha20.mysql.database.azure.com",$username, $password
 if (!$link) {
       die("Connection failed: " . mysqli_connect_error());
 }
+$consulta= "SELECT * FROM participante";
+
+$datos=mysqli_query($consulta);
+
+while (mysqli_fetch_array($datos)) {
+	echo $fila['nombres'];
+}
  ?>
 <!DOCTYPE html>
 <html>
@@ -22,7 +29,7 @@ if (!$link) {
             height: 60px;
             margin-left: auto;
             margin-right: auto;
-            top: auto;
+            top: 50px;
             bottom: auto;
             display: flex;
             justify-content: center;
@@ -55,12 +62,20 @@ if (!$link) {
                 
             }
         }
-
+        #tarjeta{
+        	background: red;
+        	position: relative;
+        	width: 15%;
+        	height: 120%;
+        }
     </style>
 </head>
 <body>
 <div id="cuadro">
         HOLI
+    </div>
+    <div id="tarjeta">
+    	sd
     </div>
 </body>
 </html>
