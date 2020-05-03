@@ -22,7 +22,7 @@ while ($fila =mysqli_fetch_array($datos)) {
 <head>
 	<title></title>
 	 <style type="text/css">
-    	body{overflow: hidden}
+    	/*body{overflow: hidden}*/
         #cuadro{
             position: relative;
             border-radius: 30px;
@@ -64,7 +64,9 @@ while ($fila =mysqli_fetch_array($datos)) {
             }
         }
         #CENTRAL{
-        	background: blue;
+        	background: blue; 
+        	width:1480px;
+        	margin:0 auto;
         }
         #tarjeta{
         	background: red;
@@ -86,6 +88,15 @@ while ($fila =mysqli_fetch_array($datos)) {
         	height: 40px;
         	top:75%;
         	margin:0px auto;
+  			display: table;
+   			align-items: center;
+   			text-align:center;
+   			
+
+        }
+        #nombre p{
+        	display: table-cell;
+        		vertical-align: middle;
         }
         img{
         	position:absolute;
@@ -97,6 +108,7 @@ while ($fila =mysqli_fetch_array($datos)) {
     		text-align:center;
     		border-radius: 8px;
 
+   
         	
         }
         table{
@@ -159,14 +171,14 @@ while ($fila =mysqli_fetch_array($datos)) {
     	
 	<img src="<?php echo $ima?>">
     	<div id="nombre" >
-    		MAICOL
+    		scscs
     	</div>	
     </div>
     <div id="tarjeta" >
     	
 <img src="<?php echo $ima?>">
     	<div id="nombre" >
-    		
+    		scsc
     	</div>
     	sd
     </div><div id="tarjeta" >
