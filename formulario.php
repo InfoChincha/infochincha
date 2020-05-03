@@ -33,7 +33,7 @@ if (isset($_POST['ENVIAR'])) {
  		$user=$fila['nombres'];
 	
 
-		if ($user=="1") {
+		if ($user=="1") {//Esta vaina funciona a través de un PA, donde si devuelve cero es porque no hay dato del mismo dni, y uno porque si 
 			$mensaje="PARTICIPANTE $nombres EXISTENTE";
 			}
 		elseif($user=="0"){
