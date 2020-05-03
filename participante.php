@@ -8,13 +8,14 @@ $link = new mysqli("infochincha20.mysql.database.azure.com",$username, $password
 if (!$link) {
       die("Connection failed: " . mysqli_connect_error());
 }
-// $consulta= "SELECT * FROM participante";
+$consulta= "SELECT * FROM participante where id='1'";
 
-// $datos=mysqli_query($link,$consulta);
+$datos=mysqli_query($link,$consulta);
 
-// while ($fila =mysqli_fetch_array($datos)) {
-// 	echo $fila['nombres'];
-// }
+while ($fila =mysqli_fetch_array($datos)) {
+ 	$ima=$fila['imagen'];
+} 
+
  ?>
 <!DOCTYPE html>
 <html>
@@ -65,17 +66,93 @@ if (!$link) {
         #tarjeta{
         	background: red;
         	position: relative;
-        	width: 15%;
-        	height: 100%;
+        	width: 20%;
+        	height: 200px;
+        }
+        #nombre{
+        	position: relative;
+        	background: blue;
+        	width: 90%;
+        	height: 40px;
+        	top:75%;
+        	margin:0px auto;
+        }
+        img{
+        	position: fixed;
+        	width: 130px;
+        	height: 130px;
+        	vertical-align:middle;
+        }
+        table{
+        	background: green;
+        	width:80%;
+        	height: 200px;
+        	margin:0 auto;
+        }
+        td{
+        	
+        	background:teal;
         }
     </style>
 </head>
 <body>
+	<table>
+		<tr>
+			<td>
+				<div id="tarjeta" >
+				<img src="<?php echo $ima?>">
+				<div id="nombre" >
+    		MAICOL
+    			</div>	
+    			</div>
+    		</td>
+    		<td>
+				<div id="tarjeta" >
+				<img src="<?php echo $ima?>">
+				<div id="nombre" >
+    		MAICOL
+    			</div>	
+    			</div>
+    		</td>
+    		<td>
+				<div id="tarjeta" >
+				<img src="<?php echo $ima?>">
+				<div id="nombre" >
+    		MAICOL
+    			</div>	
+    			</div>
+    		</td>
+    		<td>
+				<div id="tarjeta" >
+				<img src="<?php echo $ima?>">
+				<div id="nombre" >
+    		MAICOL
+    			</div>	
+    			</div>
+    		</td>
+		</tr>
+		<tr>
+			<td>2</td>
+		</tr>
+	</table>
 <div id="cuadro">
         HOLI
     </div>
-    <div id="tarjeta">
+    <div id="tarjeta" >
+    	
+	<img src="<?php echo $ima?>">
+    	<div id="nombre" >
+    		MAICOL
+    	</div>	
+    </div>
+    <div id="tarjeta" >
+    	
+<img src="<?php echo $ima?>">
+    	<div id="nombre" >
+    		
+    	</div>
     	sd
     </div>
+    
 </body>
 </html>
