@@ -8,20 +8,15 @@ $link = new mysqli("infochincha20.mysql.database.azure.com",$username, $password
 if (!$link) {
       die("Connection failed: " . mysqli_connect_error());
 }
-// $consulta= "SELECT * FROM participante";
 
-// $datos=mysqli_query($link,$consulta);
-
-// while ($fila =mysqli_fetch_array($datos)) {
-// 	echo $fila['nombres'];
-// }
  ?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 	 <style type="text/css">
-    	body{overflow: hidden}
+    	/*body{overflow: hidden}*/
         #cuadro{
             position: relative;
             border-radius: 30px;
@@ -62,20 +57,94 @@ if (!$link) {
                 
             }
         }
+        #CENTRAL{
+        	background: blue; 
+        	width:1480px;
+        	margin:0 auto;
+        }
         #tarjeta{
         	background: red;
         	position: relative;
-        	width: 15%;
-        	height: 100%;
+        	width: 200px;
+        	height: 200px;
+        	float:left;
+        	border-radius:8px;
+        	margin-left:10px;
+        	margin-bottom:10px;
+        }
+        #nombre{
+        	position: relative;
+        	background: white;
+        	color:blue;
+        	border-radius: 8px;
+        	text-align: center;
+        	width: 90%;
+        	height: 40px;
+        	top:75%;
+        	margin:0px auto;
+  			display: table;
+   			align-items: center;
+   			text-align:center;
+   			
+
+        }
+        #nombre p{
+        	display:inline-block
+        	vertical-align: middle;
+        }
+        img{
+        	position:absolute;
+        	
+        	width: 200px;
+        	height: 200px;
+        	display: table-cell;
+        	vertical-align:middle;
+    		text-align:center;
+    		border-radius: 8px;
+
+   
+        	
+        }
+        table{
+        	background: green;
+        	width:80%;
+        	height: 200px;
+        	margin:0 auto;
+        }
+        td{
+        	
+        	background:teal;
         }
     </style>
 </head>
-<body>
+<body><div id="CENTRAL" >
 <div id="cuadro">
         HOLI
-    </div>
+   	</div> 
+   	<?php
+   	$consulta= "SELECT * FROM participante";
+	$datos=mysqli_query($link,$consulta);
+while ($fila =mysqli_fetch_array($datos)) {
+ 	$ima=$fila['imagen'];
+ 	$name=$fila['nombres'];
+ 	 echo"<div id='tarjeta'><img src='$ima';>
+    		<div id='nombre' >
+    			<p>ddd</p>
+    		</div>	
+		</div>";
+} 
+
+  ?>
+
+	
+    
     <div id="tarjeta">
-    	sd
-    </div>
+	<img src="<?php echo $ima?>">
+    	<div id="nombre" >
+    		<p>HOLA</p>
+    	</div>	
+	</div>
+
+</div>
 </body>
 </html>
