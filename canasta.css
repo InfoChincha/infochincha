@@ -11,8 +11,8 @@ header{
     background: linear-gradient(to right, #6d0505, #ff0000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
     height: auto;
-    padding: 250px;
-    width: 120%;
+    padding: 155px;
+    width: 100%;
 }
 
 .container{

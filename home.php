@@ -21,7 +21,7 @@
             <div class="textos">
                 <h1>SORTEO CANASTA DE VÍVERES 2020</h1>
                 <h2>InfoChincha</h2>
-                <a href="Noticias/Principal_Noticia.html">ENTRAR</a>
+                <a href="participante.php">ENTRAR</a>
             </div>
             <img src="madre.png" alt="">
             

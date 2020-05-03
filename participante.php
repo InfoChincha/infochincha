@@ -1,9 +1,20 @@
+<?php 
+
+$username="infochincha@infochincha20";
+$password="Info_chincha";
+$database="infochincha";
+$link = new mysqli("infochincha20.mysql.database.azure.com",$username, $password, $database);
+
+if (!$link) {
+      die("Connection failed: " . mysqli_connect_error());
+}
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 	 <style type="text/css">
-    	*{overflow: hidden}
+    	body{overflow: hidden}
         #cuadro{
             position: relative;
             border-radius: 30px;
@@ -28,7 +39,7 @@
             /*-webkit-animation-delay:1s;*/
 
         }
-      /*  @-webkit-keyframes animacion1{
+        @-webkit-keyframes animacion1{
             0%{
                 bottom:-100px;
                 background-color:white;
@@ -40,7 +51,7 @@
                 
                 
             }
-        }*/
+        }
 
     </style>
 </head>
