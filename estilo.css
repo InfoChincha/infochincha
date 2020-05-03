@@ -37,7 +37,10 @@
 		}
 		input:hover{
 			
-			background:  #4100f7;
+			background: #8E2DE2;  
+			background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2); 
+			background: linear-gradient(to right, #4A00E0, #8E2DE2);
+
 			color:white;
 		}
 		input:hover::placeholder{
@@ -46,7 +49,9 @@
 		input[type=text]:focus{
 			
 			
-			border-color: #4100f7;
+			background: #8E2DE2;  
+			background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2); 
+			background: linear-gradient(to right, #4A00E0, #8E2DE2);
 			
 			
 		}
@@ -55,7 +60,11 @@
 		}
 		input[type=submit]{
 			width:35%;
-			background: #4100f7;
+			background: #8E2DE2;  
+			background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2); 
+			background: linear-gradient(to right, #4A00E0, #8E2DE2); 
+
+
 			color:white;
 			border:#F2F3F4 solid 1px;
 		}
@@ -88,7 +97,11 @@
 			height: 40%;
 			padding:10px;
 			margin-bottom:10px;
-			background: #4100f7;
+			background: #8E2DE2;  
+			background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2); 
+			background: linear-gradient(to right, #4A00E0, #8E2DE2); 
+
+
 		}
 		.ganador input:hover{
 			background: white;
