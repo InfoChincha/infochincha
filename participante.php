@@ -63,25 +63,41 @@ while ($fila =mysqli_fetch_array($datos)) {
                 
             }
         }
+        #CENTRAL{
+        	background: blue;
+        }
         #tarjeta{
         	background: red;
         	position: relative;
-        	width: 20%;
+        	width: 200px;
         	height: 200px;
+        	float:left;
+        	border-radius:8px;
+        	margin-left:10px;
+        	margin-bottom:10px;
         }
         #nombre{
         	position: relative;
-        	background: blue;
+        	background: white;
+        	color:blue;
+        	border-radius: 8px;
+        	text-align: center;
         	width: 90%;
         	height: 40px;
         	top:75%;
         	margin:0px auto;
         }
         img{
-        	position: fixed;
-        	width: 130px;
-        	height: 130px;
+        	position:absolute;
+        	
+        	width: 200px;
+        	height: 200px;
+        	display: table-cell;
         	vertical-align:middle;
+    		text-align:center;
+    		border-radius: 8px;
+
+        	
         }
         table{
         	background: green;
@@ -96,7 +112,7 @@ while ($fila =mysqli_fetch_array($datos)) {
     </style>
 </head>
 <body>
-	<table>
+	<!-- <table>
 		<tr>
 			<td>
 				<div id="tarjeta" >
@@ -134,7 +150,8 @@ while ($fila =mysqli_fetch_array($datos)) {
 		<tr>
 			<td>2</td>
 		</tr>
-	</table>
+	</table> -->
+<div id="CENTRAL" >
 <div id="cuadro">
         HOLI
     </div>
@@ -152,7 +169,42 @@ while ($fila =mysqli_fetch_array($datos)) {
     		
     	</div>
     	sd
+    </div><div id="tarjeta" >
+    	
+<img src="<?php echo $ima?>">
+    	<div id="nombre" >
+    		
+    	</div>
+    	sd
+    </div><div id="tarjeta" >
+    	
+<img src="<?php echo $ima?>">
+    	<div id="nombre" >
+    		
+    	</div>
+    	sd
+    </div><div id="tarjeta" >
+    	
+<img src="<?php echo $ima?>">
+    	<div id="nombre" >
+    		
+    	</div>
+    	sd
+    </div><div id="tarjeta" >
+    	
+<img src="<?php echo $ima?>">
+    	<div id="nombre" >
+    		
+    	</div>
+    	sd
+    </div><div id="tarjeta" >
+    	
+<img src="<?php echo $ima?>">
+    	<div id="nombre" >
+    		scs
+    	</div>
+    	sd
     </div>
-    
+</div>
 </body>
 </html>
