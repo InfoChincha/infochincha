@@ -41,13 +41,16 @@ if (!$link) {
         }
         @-webkit-keyframes animacion1{
             0%{
-                bottom:-100px;
-                background-color:white;
+                left:-100px;
+               
                 
-                color:#4100f7;
+               
+            }
+            50%{
+            	 background-color:white;
             }
             100%{
-                bottom:150px;
+                left:150px;
                 
                 
             }
