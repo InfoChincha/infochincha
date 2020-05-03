@@ -1,161 +1,148 @@
 <?php
 
-// $con = mysql_connect('infochincha20.mysql.database.azure.com','infochincha','Info_chincha');
-// mysql_select_db('participante', $con);
+$username="infochincha@infochincha20";
+$password="Info_chincha";
+$database="infochincha";
+$link = new mysqli("infochincha20.mysql.database.azure.com",$username, $password, $database);
+$link2 = new mysqli("infochincha20.mysql.database.azure.com",$username, $password, $database);
+if (!$link) {
+      die("Connection failed: " . mysqli_connect_error());
+}
 
-// $query = 'select * from participante';
-	
-// 	$result = mysql_query($query);
-	
-// 	if($result){
-// 		while($row = mysql_fetch_array($result)){
-// 			$name = $row["$nombres"];
-// 			echo "Nombre: ".$name."br/>";
-// 		}}
+$mensaje="REGÍSTRATE";
+if (isset($_POST['ENVIAR'])) {
+	// $revisar = getimagesize($_FILES["foto"]["tmp_name"]);
+	$dni = $_POST['DNI'];
+	$nombres = $_POST['NOMBRES'];
+	$apellidos = $_POST['APELLIDOS'];
+	$distrito=$_POST['DISTRITO'];
+	$descripcion = $_POST['DESCRIPCION'];
+	$imagen = $_POST['IMAGEN'];
+ 	$alldni="CALL ingresar($dni);";
+	$consulta=mysqli_query($link ,$alldni);
+
+  	// $revisar = $_FILES["IMAGEN"]["tmp_name"];
+   //  if($revisar !== false){
+   //      $image = $_FILES['IMAGEN']['tmp_name'];
+   //      $imgContenido = addslashes(file_get_contents($image));
+   //  }
+   //  else{
+   //  	$imgContenido = "";
+   //  }
+ 	while ($fila =mysqli_fetch_array($consulta)){
+ 		$user=$fila['nombres'];
 	
 
-	$conexion = mysqli_connect( 'infochincha20.mysql.database.azure.com', 'infochincha', 'Info_chincha' ) or die ("No se ha podido conectar al servidor de Base de datos");
+		if ($user=="1") {
+			$mensaje="PARTICIPANTE $nombres EXISTENTE";
+			}
+		elseif($user=="0"){
+			
+		
+
+  		$sql="INSERT INTO participante(nombres,apellidos,dni,distrito,imagen,descripcion) values('$nombres','$apellidos','$dni','$distrito','$imagen','$descripcion'); ";
+  		if (mysqli_query($link2, $sql)) {
+  		$mensaje="BIENVENIDO AL SORTEO $nombres";
+  		}else {
+       	echo "Error: " . $sql . "<br>" . mysqli_error($link2);
+		}}
+			
+}
+
+$link-> close();
+
+ } 
+ // $result = $link->query("SELECT imagen FROM participante WHERE id = '5'");
+    
+ //    if($result->num_rows > 0){
+ //        $imgDatos = $result->fetch_assoc();
+        
+ //        //Mostrar Imagen
+ //        header("Content-type: image/jpg"); 
+ //        echo $imgDatos['imagen']; 
+ //    }else{
+ //        echo 'Imagen no existe...';
+ //    }
+
+
+
+// else if(mysqli_error($conn)=="Duplicate entry '$dni' for key 'dni'"){
+// 	$mensaje="$user YA HA SIDO REGISTRADO";
+// }
+// else {
+//       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+// 	}
+ 	// $mensaje=$fila['nombres'];
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 	<link href="https://fonts.googleapis.com/css?family=Manrope&display=swap" rel="stylesheet">
-	<style type="text/css">
-		*{
-			font-family: 'Manrope', sans-serif;
-		}
-		table{
-			margin:auto;
-			position: relative;
-			top:100px;
-			/*background: #4100f7;*/
-			background: #CACFD2;
-			
-			width:30%;
-			height: 380px;
-			border-radius: 6px;
-		}
-		input{
-			background: white;
-			position: relative;
-			border:solid #CACFD2;
-			border-radius:7px;
-			width: 82%;
-			height: 85%;
-			margin-bottom:2px;
-			padding: 8px;
-			
-			font-size: 18px;
-			transition: border-color 0.5s;
-			text-align: center;transition: background 0.4s;outline: 0 none; 
-
-		}
-		input:hover{
-			
-			background:  #4100f7;
-			color:white;
-		}
-		input:hover::placeholder{
-			color:white;
-		}
-		input[type=text]:focus{
-			
-			
-			border-color: #4100f7;
-			
-			
-		}
-		input[type=text]:focus::placeholder{
-			
-		}
-		input[type=submit]{
-			width:35%;
-			background: #4100f7;
-			color:white;
-			border:#F2F3F4 solid 1px;
-		}
-		input[type=submit]:hover{
-			background: white ;
-			color:#4100f7;border:#4100f7 solid 1px;
-		}
-		td p{
-			align-content: center;
-			align-items: center;
-			text-align: center;	
-			color: white;
-			font-family: 'Manrope', sans-serif;
-		}
-		
-		select{
-			border:none;
-			position: relative;
-			text-align-last: center;
-			border-radius: 3px;
-			width: 60%;
-			height: 100%;
-
-			
-			
-			
-		}
-		option{
-			text-align: center;
-		}
-		.ganador{
-			width: 30%;
-			height: 40%;
-			padding:10px;
-			margin-bottom:10px;
-		}
-		.ganador input:hover{
-			background: white;
-		}
-	</style>
+	<LINK REL=StyleSheet HREF="estilo.css" TYPE="text/css" MEDIA=screen>
 
 </head>
 <body>
 	<table CLASS="ganador">
 		<tr>
-			<td align=center><input type="text" name="" disabled=""></td>
+			<td align=center><?php echo "<p>". $mensaje."</p>" ?>
 		</tr>
 	</table>
-	<form>
+	<form method="POST" action="formulario.php" enctype="multipart/form-data">
 		<table align="center">
 			<tr>
-				<td align=center><input type="text" name="" placeholder="INGRESAR NOMBRES" style="text-transform:uppercase;" value=""  onkeyup="javascript:this.value=this.value.toUpperCase();"></td>
+				<td align=center><input type="text" name="NOMBRES" required placeholder="INGRESAR NOMBRES" style="text-transform:uppercase;" value=""  onkeyup="javascript:this.value=this.value.toUpperCase();"></td>
 			</tr>
 			<tr>
-				<td align=center><input type="text" name="" placeholder="INGRESAR APELLIDOS" style="text-transform:uppercase;" value=""  onkeyup="javascript:this.value=this.value.toUpperCase();"></td>
+				<td align=center><input type="text" name="APELLIDOS" required placeholder="INGRESAR APELLIDOS" style="text-transform:uppercase;" value=""  onkeyup="javascript:this.value=this.value.toUpperCase();"></td>
 			</tr>
 			<tr>
 				<td align=center>
-				<input type="text" name="" placeholder="DNI" id="dni" accesskey="d" maxlength="8" size="8"onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue=false; ">
+				<input type="text" name="DNI" placeholder="DNI" id="dni" required accesskey="d" maxlength="8" size="8"onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue=false; ">
+				</td>
+			</tr>
+			<!-- <tr>
+				<td align=center>
+				<input type="file" name="IMAGEN" id="dni"  accesskey="d" maxlength="8" size="8"onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue=false; ">
+				</td>
+			</tr> -->
+			<tr>
+				<td align=center>
+				<input type="text" name="IMAGEN" placeholder="IMAGEN" id="IMAGEN">
 				</td>
 			</tr>
 			<tr>
 				<td align=center>
-				<input type="text" name="" placeholder="NRO. CELULAR" id="dni" accesskey="d" maxlength="9" size="8"onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue=false; ">
+				<input type="text" name="DESCRIPCION" placeholder="DESCRIPCION" required id="DESCRIPCION" style="text-transform:uppercase;" value=""  onkeyup="javascript:this.value=this.value.toUpperCase();">
 				</td>
 			</tr>
+			
+			
 			<tr>
 				<td align=center>
-				<input type="file" name="" placeholder="NRO. CELULAR" id="dni" accesskey="d" maxlength="9" size="8"onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue=false; ">
-				</td>
-			</tr>
-			<tr>
-				<td align=center><select>
-					<option disabled selected>SELECCIONAR DISTRITO</option>
-					<option>PUEBLO NUEVO</option>
-					<option>SUNAMPE</option>
-					<option>CHINCHA BAJA</option>
-					<option>TAMBO DE MORA</option>
-					<option>EL CARMEN</option>
+					<select name="DISTRITO" required>
+					<option value="" selected>SELECCIONAR DISTRITO</option>
+					<option value="PUEBLO NUEVO">PUEBLO NUEVO</option>
+					<option value="SUNAMPE">SUNAMPE</option>
+					<option value="CHINCHA BAJA">CHINCHA BAJA</option>
+					<option VALUE="TAMBO DE MORA">TAMBO DE MORA</option>
+					<option value="EL CARMEN">EL CARMEN</option>
+					<option value="CHINCHA ALTA">CHINCHA ALTA</option>
+					<option value="ALTO LARÁN">ALTO LARÁN</option>
+					<option value="GROCIO PRADO">GROCIO PRADO</option>
+					<option value="CHAVÍN">CHAVÍN</option>
+					<option value="SAN PEDRO DE HUACARPANA">SAN PEDRO DE HUACARPANA</option>
+					<option value="SAN JUAN DE YANAC">SAN JUAN DE YANAC</option>
 				</select></td>
 			</tr>
 			<tr>
 				<td align=center>
-				<input type="submit" name="" placeholder="DNI" value="REGISTRAR">
+				<input type="submit" name="ENVIAR" placeholder="DNI" value="REGISTRAR">
+				</td>
+			</tr>
+			<tr>
+				<td align=center>
+				<a href="">VER PARTICIPANTES</a>
 				</td>
 			</tr>
 		</table>

@@ -1,0 +1,92 @@
+*{
+			font-family: 'Manrope', sans-serif;
+		}
+		table{
+			margin:auto;
+			position: relative;
+			top:100px;
+			/*background: #4100f7;*/
+			background: #CACFD2;
+			
+			width:30%;
+			height: 420px;
+			border-radius: 6px;
+		}
+		input{
+			background: white;
+			position: relative;
+			border:solid #CACFD2;
+			border-radius:7px;
+			width: 82%;
+			height: 85%;
+			margin-bottom:2px;
+			padding: 8px;
+			
+			font-size: 18px;
+			transition: border-color 0.5s;
+			text-align: center;transition: background 0.4s;outline: 0 none; 
+
+		}
+		input:hover{
+			
+			background:  #4100f7;
+			color:white;
+		}
+		input:hover::placeholder{
+			color:white;
+		}
+		input[type=text]:focus{
+			
+			
+			border-color: #4100f7;
+			
+			
+		}
+		input[type=text]:focus::placeholder{
+			
+		}
+		input[type=submit]{
+			width:35%;
+			background: #4100f7;
+			color:white;
+			border:#F2F3F4 solid 1px;
+		}
+		input[type=submit]:hover{
+			background: white ;
+			color:#4100f7;border:#4100f7 solid 1px;
+		}
+		td p{
+			align-content: center;
+			align-items: center;
+			text-align: center;	
+			color: white;
+			font-family: 'Manrope', sans-serif;
+		}
+		
+		select{
+			border:none;
+			position: relative;
+			text-align-last: center;
+			border-radius: 3px;
+			width: 86%;
+			height: 100%;
+			margin:10px 0px;
+		}
+		option{
+			text-align: center;
+		}
+		.ganador{
+			width: 30%;
+			height: 40%;
+			padding:10px;
+			margin-bottom:10px;
+			background: #4100f7;
+		}
+		.ganador input:hover{
+			background: white;
+			color:black;
+		}
+		.ganador p{
+			font-size: 30px;
+			margin:-4px;
+		}
