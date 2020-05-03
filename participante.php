@@ -8,12 +8,20 @@ $link = new mysqli("infochincha20.mysql.database.azure.com",$username, $password
 if (!$link) {
       die("Connection failed: " . mysqli_connect_error());
 }
-$consulta= "SELECT * FROM participante where id='1'";
+$consulta= "SELECT imagen FROM participante";
 
 $datos=mysqli_query($link,$consulta);
 
 while ($fila =mysqli_fetch_array($datos)) {
  	$ima=$fila['imagen'];
+ 	 echo"<html>
+ 		<div id='tarjeta'>
+ 		<img src="?><?php echo $ima;" >
+    		<div id='nombre' >
+    			<p>HOLA</p>
+    		</div>	
+		</div>
+	</html>";
 } 
 
  ?>
@@ -95,8 +103,8 @@ while ($fila =mysqli_fetch_array($datos)) {
 
         }
         #nombre p{
-        	display: table-cell;
-        		vertical-align: middle;
+        	display:inline-block
+        	vertical-align: middle;
         }
         img{
         	position:absolute;
@@ -164,59 +172,16 @@ while ($fila =mysqli_fetch_array($datos)) {
 		</tr>
 	</table> -->
 <div id="CENTRAL" >
-<div id="cuadro">
+	<div id="cuadro">
         HOLI
-    </div>
-    <div id="tarjeta" >
-    	
+   	</div>
+    
+    <div id="tarjeta">
 	<img src="<?php echo $ima?>">
     	<div id="nombre" >
-    		scscs
+    		<p>HOLA</p>
     	</div>	
-    </div>
-    <div id="tarjeta" >
-    	
-<img src="<?php echo $ima?>">
-    	<div id="nombre" >
-    		scsc
-    	</div>
-    	sd
-    </div><div id="tarjeta" >
-    	
-<img src="<?php echo $ima?>">
-    	<div id="nombre" >
-    		
-    	</div>
-    	sd
-    </div><div id="tarjeta" >
-    	
-<img src="<?php echo $ima?>">
-    	<div id="nombre" >
-    		
-    	</div>
-    	sd
-    </div><div id="tarjeta" >
-    	
-<img src="<?php echo $ima?>">
-    	<div id="nombre" >
-    		
-    	</div>
-    	sd
-    </div><div id="tarjeta" >
-    	
-<img src="<?php echo $ima?>">
-    	<div id="nombre" >
-    		
-    	</div>
-    	sd
-    </div><div id="tarjeta" >
-    	
-<img src="<?php echo $ima?>">
-    	<div id="nombre" >
-    		scs
-    	</div>
-    	sd
-    </div>
+	</div>
 </div>
 </body>
 </html>
