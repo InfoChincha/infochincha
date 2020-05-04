@@ -15,8 +15,15 @@ if (!$link) {
 <html>
 <head>
 	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 	 <style type="text/css">
     	/*body{overflow: hidden}*/
+    	body{
+    		background: #6d0505;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6d0505, #ff0000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6d0505, #ff0000);
+    	}
+    	
         #cuadro{
             position: relative;
             border-radius: 30px;
@@ -32,8 +39,9 @@ if (!$link) {
             flex-direction: column;
             background-color:#4100f7;
             text-align: center;
+            font-size: 20px;font-family: 'Raleway', sans-serif;
             -webkit-animation-name: animacion1;
-            -webkit-animation-duration:1s;
+            -webkit-animation-duration:3s;
             -webkit-animation-iteration-count:infinite;
             -webkit-animation-direction:alternate;
             -webkit-animation-timing-function:ease-in-out;
@@ -45,101 +53,164 @@ if (!$link) {
             0%{
                 left:-100px;
                
-                
-               
             }
-            50%{
-            	 background-color:white;
-            }
+           
             100%{
                 left:150px;
                 
                 
             }
         }
+
         #CENTRAL{
+        	position: relative;
         	background: blue; 
-        	width:1480px;
+        	width:1380px;
         	margin:0 auto;
+        	top:130px;
         }
         #tarjeta{
-        	background: red;
+        	background: #4100f7;
+        	
         	position: relative;
-        	width: 200px;
-        	height: 200px;
+        	width: 150px;
+        	height: 150px;
         	float:left;
         	border-radius:8px;
-        	margin-left:10px;
-        	margin-bottom:10px;
+        	margin-left:20px;
+        	margin-bottom:20px;
         }
+        
         #nombre{
         	position: relative;
         	background: white;
-        	color:blue;
+        	color:#808080;
         	border-radius: 8px;
         	text-align: center;
-        	width: 90%;
-        	height: 40px;
-        	top:75%;
-        	margin:0px auto;
+        	width: 100%;
+        	height: 100%;
+        	opacity: 70%;
   			display: table;
    			align-items: center;
    			text-align:center;
-   			
-
+   			line-height:150px;
         }
+        
+       
         #nombre p{
-        	display:inline-block
-        	vertical-align: middle;
+        	
+        display:inline-block;
+		vertical-align:middle;
+		line-height:normal;
+		font-size: 20px;
+		font-family: 'Raleway', sans-serif;
+		
+        }
+
+        #nombre:hover{
+        	transition: opacity 0.3s;
+        	background: #4100f7;
+        	
         }
         img{
         	position:absolute;
-        	
-        	width: 200px;
-        	height: 200px;
+        	width: 150px;
+        	height: 150px;
         	display: table-cell;
         	vertical-align:middle;
     		text-align:center;
-    		border-radius: 8px;
+    		border-radius: 10px;
+        }
 
-   
-        	
-        }
-        table{
-        	background: green;
-        	width:80%;
-        	height: 200px;
+        #random{
+        	background: white;
+        	border:none;
+        	color: #4100f7;
+        	position: relative;
+        	width:15%;
+        	height: 60px;
         	margin:0 auto;
+        	display: flex;
+        	font-size: 30px;
+        	top:60px;
+            justify-content: center;
+            align-content: center;
+            border-radius:8px;
+            text-align: center;
+            vertical-align: middle;
         }
-        td{
-        	
-        	background:teal;
+        #random:hover{
+        	transition: background 0.3s;
+        	background: #4100f7;
+        	color:white;
         }
     </style>
 </head>
-<body><div id="CENTRAL" >
-<div id="cuadro">
-        HOLI
-   	</div> 
+<body >
+	
+	<script type="text/javascript">
+		var cont=0;
+		function contador()
+		{
+			var contador=document.getElementById("contador");
+			contador.value=3;}
+	</script>
+	<input type="text" name="contador" id="" value="3">
+	<?php 
+	$envio= "SELECT * FROM participante";
+	$consulta=mysqli_query($link,$envio);
+	$ran=$_POST['contador'];
+if (isset($_POST['random'])) 
+		{	$ran=rand(10,300);;
+	while ($fila =mysqli_fetch_array($consulta)) {
+ 	$i=$fila['id'];
+ 			
+	
+		}	
+		$ran=rand(10,$i);
+		echo $ran;
+
+
+}
+		
+	 ?>
+	
+	<div id="cuadro">
+        BIENVENIDOS AL SORTEO
+   	</div>  
+   	<form action="participante.php" method="post">
+		<input type="submit" name="random" value="SORTEAR" id="random">
+	
+		</form>
+	<div id="CENTRAL" >
+
    	<?php
    	$consulta= "SELECT * FROM participante";
 	$datos=mysqli_query($link,$consulta);
 while ($fila =mysqli_fetch_array($datos)) {
  	$ima=$fila['imagen'];
  	$name=$fila['nombres'];
+ 	$id=$fila['id'];
+ 	if ($id!=$ran) {
+ 		$ide="nombre";
+ 	}
+ 	else{
+ 		$ide="nay";
+ 	}
  	 echo"<div id='tarjeta'><img src='$ima';>
-    		<div id='nombre' >
-    			<p>ddd</p>
+    		<div id='$ide' >
+    			<p>$id </p>
+    			
     		</div>	
 		</div>";
 } 
-
+mysqli_close($link);
   ?>
 
 	
     
     <div id="tarjeta">
-	<img src="<?php echo $ima?>">
+	<img src="https://scontent-lim1-1.xx.fbcdn.net/v/t1.0-9/95957278_976209036128106_5483503863426187264_n.png?_nc_cat=102&_nc_sid=8024bb&_nc_eui2=AeFJrCEDoLvs0kxhLpjMGPjLNqdGq_iYXmY2p0ar-JheZpscoRO9wn49QxMqBn4UpAsNL_85hKISwwxanwfj9WPZ&_nc_ohc=NlQXmKgwd-QAX9pwrx3&_nc_ht=scontent-lim1-1.xx&oh=34b57c3265f8de6f3bfec2e9d560f4bb&oe=5ED54CBB">
     	<div id="nombre" >
     		<p>HOLA</p>
     	</div>	
@@ -147,4 +218,7 @@ while ($fila =mysqli_fetch_array($datos)) {
 
 </div>
 </body>
+<script type="text/javascript">
+	setInterval('contador()',1000);
+</script>
 </html>
