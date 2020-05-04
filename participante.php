@@ -128,6 +128,21 @@ if (!$link) {
     </style>
 </head>
 <body >
+
+	<?php 
+		if (isset($_POST['random'])) {
+			$ran=rand(10,100);
+			$result=$ran;
+}
+	 ?>
+	<input type="submit" name="random" value="sads">
+	<?php
+		if (isset($_POST['random'])) {
+			echo $result;
+		}
+	?>
+		
+	</input>
 	<div id="cuadro">
         HOLI
    	</div> 
