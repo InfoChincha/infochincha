@@ -10,17 +10,17 @@
 
 		}
 		table{
+			max-width: 400px;
 			margin:auto;
 			position: relative;
 			top:100px;
-			/*background: #4100f7;*/
 			background: #CACFD2;
-			
-			width:30%;
-			height: 420px;
-			border-radius: 6px;
+			width:100%;
+			height: 480px;
+			border-radius: 8px;
 		}
 		input{
+			top: 5px;
 			background: white;
 			position: relative;
 			border:solid #CACFD2;
@@ -59,10 +59,12 @@
 			
 		}
 		input[type=submit]{
+			
 			width:35%;
 			background: #8E2DE2;  
 			background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2); 
 			background: linear-gradient(to right, #4A00E0, #8E2DE2); 
+			cursor: pointer;
 
 
 			color:white;
@@ -93,7 +95,7 @@
 			text-align: center;
 		}
 		.ganador{
-			width: 30%;
+			max-width: 400px;
 			height: 40%;
 			padding:10px;
 			margin-bottom:10px;
