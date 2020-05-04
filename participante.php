@@ -130,19 +130,25 @@ if (!$link) {
 <body >
 
 	<?php 
-		if (isset($_POST['random'])) {
-			$ran=rand(10,100);
-			$result=$ran;
+	$envio= "SELECT * FROM participante";
+	$consulta=mysqli_query($link,$envio);
+if (isset($_POST['random'])) 
+		{
+	while ($fila =mysqli_fetch_array($consulta)) {
+ 	$i=$fila['id'];
+ 			
+	
+		}	
+		$ran=rand(10,$i);
+		echo $ran;
 }
+
 	 ?>
+	 <form action="participante.php" method="post">
 	<input type="submit" name="random" value="sads">
-	<?php
-		if (isset($_POST['random'])) {
-			echo $result;
-		}
-	?>
+	
 		
-	</input>
+	</input></form>
 	<div id="cuadro">
         HOLI
    	</div> 
