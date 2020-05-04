@@ -39,8 +39,9 @@ if (!$link) {
             flex-direction: column;
             background-color:#4100f7;
             text-align: center;
+            font-size: 20px;font-family: 'Raleway', sans-serif;
             -webkit-animation-name: animacion1;
-            -webkit-animation-duration:1s;
+            -webkit-animation-duration:3s;
             -webkit-animation-iteration-count:infinite;
             -webkit-animation-direction:alternate;
             -webkit-animation-timing-function:ease-in-out;
@@ -53,9 +54,7 @@ if (!$link) {
                 left:-100px;
                
             }
-            50%{
-            	 background-color:white;
-            }
+           
             100%{
                 left:150px;
                 
@@ -65,7 +64,7 @@ if (!$link) {
 
         #CENTRAL{
         	position: relative;
-        	background: white; 
+        	background: blue; 
         	width:1380px;
         	margin:0 auto;
         	top:130px;
@@ -81,6 +80,7 @@ if (!$link) {
         	margin-left:20px;
         	margin-bottom:20px;
         }
+        
         #nombre{
         	position: relative;
         	background: white;
@@ -89,7 +89,7 @@ if (!$link) {
         	text-align: center;
         	width: 100%;
         	height: 100%;
-        	
+        	opacity: 70%;
   			display: table;
    			align-items: center;
    			text-align:center;
@@ -104,36 +104,64 @@ if (!$link) {
 		line-height:normal;
 		font-size: 20px;
 		font-family: 'Raleway', sans-serif;
+		
         }
 
         #nombre:hover{
         	transition: opacity 0.3s;
-        	opacity: 0;
+        	background: #4100f7;
+        	
         }
         img{
         	position:absolute;
-        	
         	width: 150px;
         	height: 150px;
         	display: table-cell;
         	vertical-align:middle;
     		text-align:center;
     		border-radius: 10px;
-
-   
-        	
         }
 
-
+        #random{
+        	background: white;
+        	border:none;
+        	color: #4100f7;
+        	position: relative;
+        	width:15%;
+        	height: 60px;
+        	margin:0 auto;
+        	display: flex;
+        	font-size: 30px;
+        	top:60px;
+            justify-content: center;
+            align-content: center;
+            border-radius:8px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        #random:hover{
+        	transition: background 0.3s;
+        	background: #4100f7;
+        	color:white;
+        }
     </style>
 </head>
 <body >
-
+	
+	<script type="text/javascript">
+		var cont=0;
+		function contador()
+		{
+			var contador=document.getElementById("contador");
+			contador.value=3;}
+	</script>
+	<input type="text" name="contador" id="" value="3">
 	<?php 
 	$envio= "SELECT * FROM participante";
 	$consulta=mysqli_query($link,$envio);
+	$ran=$_POST['contador'];
 if (isset($_POST['random'])) 
-		{
+		{	$ran=rand(10,300);;
 	while ($fila =mysqli_fetch_array($consulta)) {
  	$i=$fila['id'];
  			
@@ -141,17 +169,19 @@ if (isset($_POST['random']))
 		}	
 		$ran=rand(10,$i);
 		echo $ran;
-}
 
-	 ?>
-	 <form action="participante.php" method="post">
-	<input type="submit" name="random" value="sads">
-	
+
+}
 		
-	</input></form>
+	 ?>
+	
 	<div id="cuadro">
-        HOLI
-   	</div> 
+        BIENVENIDOS AL SORTEO
+   	</div>  
+   	<form action="participante.php" method="post">
+		<input type="submit" name="random" value="SORTEAR" id="random">
+	
+		</form>
 	<div id="CENTRAL" >
 
    	<?php
@@ -161,9 +191,14 @@ while ($fila =mysqli_fetch_array($datos)) {
  	$ima=$fila['imagen'];
  	$name=$fila['nombres'];
  	$id=$fila['id'];
-
+ 	if ($id!=$ran) {
+ 		$ide="nombre";
+ 	}
+ 	else{
+ 		$ide="nay";
+ 	}
  	 echo"<div id='tarjeta'><img src='$ima';>
-    		<div id='nombre' >
+    		<div id='$ide' >
     			<p>$id </p>
     			
     		</div>	
@@ -183,4 +218,7 @@ mysqli_close($link);
 
 </div>
 </body>
+<script type="text/javascript">
+	setInterval('contador()',1000);
+</script>
 </html>
