@@ -18,6 +18,12 @@ if (!$link) {
 	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 	 <style type="text/css">
     	/*body{overflow: hidden}*/
+    	body{
+    		background: #6d0505;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6d0505, #ff0000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6d0505, #ff0000);
+    	}
+    	
         #cuadro{
             position: relative;
             border-radius: 30px;
@@ -121,7 +127,7 @@ if (!$link) {
 
     </style>
 </head>
-<body bgcolor="#4100f7">
+<body >
 	<div id="cuadro">
         HOLI
    	</div> 
