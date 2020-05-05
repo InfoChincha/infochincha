@@ -15,31 +15,32 @@ if (!$link) {
 <html>
 <head>
 	<title></title>
-	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+	<script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">>
 	 <style type="text/css">
-    	/*body{overflow: hidden}*/
     	body{
-    		background: #6d0505;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #6d0505, #ff0000);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #6d0505, #ff0000);
+    		background: white;
     	}
-    	
+
         #cuadro{
             position: relative;
-            border-radius: 30px;
-            width:20%;
+            border-radius: 10px;
+            width:50%;
             height: 60px;
             margin-left: auto;
             margin-right: auto;
-            top: 50px;
+            top: 20px;
             bottom: auto;
             display: flex;
             justify-content: center;
             align-content: center;
             flex-direction: column;
-            background-color:#4100f7;
+            background-color:#393939;
             text-align: center;
-            font-size: 20px;font-family: 'Raleway', sans-serif;
+            font-size: 20px;font-family: 'Work Sans', sans-serif;
             -webkit-animation-name: animacion1;
             -webkit-animation-duration:3s;
             -webkit-animation-iteration-count:infinite;
@@ -49,7 +50,7 @@ if (!$link) {
             /*-webkit-animation-delay:1s;*/
 
         }
-        @-webkit-keyframes animacion1{
+/*        @-webkit-keyframes animacion1{
             0%{
                 left:-100px;
                
@@ -61,7 +62,7 @@ if (!$link) {
                 
             }
         }
-
+*/
         #CENTRAL{
         	position: relative;
         	background: blue; 
@@ -83,8 +84,8 @@ if (!$link) {
         
         #nombre{
         	position: relative;
-        	background: white;
-        	color:#808080;
+        	background: #5C5C5C;
+        	color:white;
         	border-radius: 8px;
         	text-align: center;
         	width: 100%;
@@ -103,7 +104,7 @@ if (!$link) {
 		vertical-align:middle;
 		line-height:normal;
 		font-size: 20px;
-		font-family: 'Raleway', sans-serif;
+		font-family: 'Work Sans', sans-serif;
 		
         }
 
@@ -123,9 +124,10 @@ if (!$link) {
         }
 
         #random{
-        	background: white;
+        	background: #4100f7;
         	border:none;
-        	color: #4100f7;
+        	color: white;
+        	cursor: pointer;
         	position: relative;
         	width:160px;
         	height: 160px;
@@ -138,21 +140,24 @@ if (!$link) {
             border-radius:148px;
             text-align: center;
             vertical-align: middle;
-
+transition: background 0.3s;
+outline-offset: 0;outline:none
         }
         #random:hover{
-        	transition: background 0.3s;
-        	background: #4100f7;
+        	
+        	background: #B4DB00;
         	color:white;
 
         }
         #numero-aleatorio{
-  			padding:50px 0;
-  			font-size:200px;
+  			position: absolute;
+  			font-size:150px;
   			font-weight: 700;
   			text-align:center;
-  			line-height:100px;
-  			color:white;user-select: none;
+  			left: 20px;
+  			bottom:50px;
+  			color:#4100f7;user-select: none;font-family: 'Work Sans', sans-serif;
+  			
 		}
 		#nay{
 			position: relative;
@@ -174,7 +179,7 @@ if (!$link) {
 		vertical-align:middle;
 		line-height:normal;
 		font-size: 20px;
-		font-family: 'Raleway', sans-serif;
+	font-family: 'Work Sans', sans-serif;
 		
         }
 
@@ -185,55 +190,57 @@ if (!$link) {
         }
     </style>
 </head>
-<body >
+<body>
 	
-	<script type="text/javascript">
-		var cont=0;
-		
-		function generate(){
-			var num=Math.floor(Math.random()*100);
-			
-		}
-		setInterval(generate,1000);
-	</script>
 
 	<?php 
-			$envio= "SELECT * FROM participante";
-			$consulta=mysqli_query($link,$envio);
-			$ran="<script>document.write(0)</script>";
-			echo "<script>num;</script>";
+		$envio= "SELECT * FROM participante";
+		$consulta=mysqli_query($link,$envio);
+		$ran="0";	
 		if (isset($_POST['random'])) 
 			{	$ran=rand(10,300);;
 				while ($fila =mysqli_fetch_array($consulta)) {
  				$i=$fila['id'];
 			}	
 				$ran=rand(10,$i);
-		}
-		
+		}	
 	 ?>
-	 	<div id="cuadro">
+
+	<script type="text/javascript">
+ 		$(document).ready(function(){
+		setInterval(
+		function(){
+			$('#cuadro').load('prueba.php')
+			},1000
+			);
+	});
+	</script>
+	
+	<div id="cuadro">
        	 	BIENVENIDOS AL SORTEO
-   		</div> 
-	<div id="numero-aleatorio"><?php echo $ran; ?></div>
+   	</div>
 	 
    	<form action="participante.php" method="post">
 		<input type="submit" name="random" value="SORTEAR" id="random">
-	
 		</form>
+	
 	<div id="CENTRAL" >
-		
+		<div id="numero-aleatorio"><?php echo $ran; ?></div>
    	<?php
    	$consulta= "SELECT * FROM participante";
 	$datos=mysqli_query($link,$consulta);
+	$gana=0;
 		while ($fila =mysqli_fetch_array($datos)) {
  			$ima=$fila['imagen'];
  			$name=$fila['nombres'];
  			$id=$fila['id'];
  			if ($id!=$ran) {
  				$ide="nombre";
+ 				
  				}
  			else{
  			$ide="nay";
+ 			$gana=$fila['dni']."<br>".$fila['nombres']."<br>".$fila['apellidos']."<br>".$fila['distrito'];
  			}
  	 		echo"<div id='tarjeta'><img src='$ima';>
     			<div id='$ide'>
@@ -244,7 +251,26 @@ if (!$link) {
 } 
 mysqli_close($link);
   ?>
-
+  <style type="text/css">
+  	#ganador{
+  		position: absolute;
+  		
+  		bottom:45px;
+  		right:15px;
+  		font-size: 30px;
+  		background:#E4E4E4;
+  		border-radius:8px;
+  		font-family: 'Work Sans', sans-serif;
+  		text-align: center;
+  	}
+  	#gana{
+  		position: relative;
+  		bottom: 15px;
+  		background: white;
+  		color:black;
+  	}
+  </style>
+	<div id="ganador"><p id="gana">GANADOR</p><?php echo $gana; ?></div>
 	
     
  <!--    <div id="tarjeta">
@@ -256,7 +282,5 @@ mysqli_close($link);
 
 </div>
 </body>
-<!-- <script type="text/javascript">
-	setInterval('contador()',1000);
-</script> -->
+
 </html>

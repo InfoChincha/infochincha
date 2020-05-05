@@ -10,12 +10,14 @@
     <link rel="icon" href="IMG/infochincha_icon.png">
     <style type="text/css">
     	*{overflow: hidden}
-     
+     h1{
+        background:;
+     }
     
 
     </style>
 </head>
-<body>
+<body background="c.png">
     <header>
         <div class="container">
             <div class="textos">

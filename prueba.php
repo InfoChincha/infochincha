@@ -1,17 +1,21 @@
 <?php 
-$frase=array(
-	1=> "sdasd",
-	2=> "Hola",
-	3=> "Te amo",
-	4=> "Mi amor",
-	5=> "Cómo",
-	6=> "Estás",
-	7=> "Soy yo",
-	8=> "Quien te ama",
-	9=> "Cous",
+$username="infochincha@infochincha20";
+$password="Info_chincha";
+$database="infochincha";
+$link = new mysqli("infochincha20.mysql.database.azure.com",$username, $password, $database);
 
-); 
-$numero =rand(1,9);
-echo "$frase[$numero]";
+if (!$link) {
+      die("Connection failed: " . mysqli_connect_error());
+}
+$ran=rand(1,172);
+$envio= "SELECT * FROM participante WHERE id='$ran'";
+		$consulta=mysqli_query($link,$envio);
+		while ($fila =mysqli_fetch_array($consulta)) {
+ 		$o=$fila['id'];	
+ 		$tubo=$fila['nombres'].' '.$fila['apellidos'];
+ 	}		
+$numero =rand(1,$o);
+
+echo "$tubo";
 	
 	?>

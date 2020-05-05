@@ -6,13 +6,12 @@
 }
 
 header{
-    background: #6d0505;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #6d0505, #ff0000);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #6d0505, #ff0000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+   
     height: auto;
-    padding: 155px;
+    padding: 185px;
     width: 100%;
+
+  
 }
 
 .container{
@@ -28,12 +27,14 @@ img{
     display: block;
     height: 450px;
     object-fit: cover;
-    animation: moverArriba 1s ease-in;
+    animation: moverArriba 3s ease-in;
 }
 
 .textos{
-    width: 50%;
-    color: #fff;
+    position: relative;
+
+    width: 60%;
+    color: #3100bc;
 }
 .textos h1{
     font-size: 70px;
@@ -48,6 +49,7 @@ img{
 .textos a{
     display: inline-block;
     color: #fff;
+    background: #393939;
     font-weight: 300;
     text-decoration: none;
     margin-top: 30px;
@@ -57,6 +59,10 @@ img{
     text-align: center;
     padding: 10px 0;
     animation: moverArriba 1s ease-in;
+}
+.textos a:hover{
+    background: white;
+    color:#696969;
 }
 
 .wave{
