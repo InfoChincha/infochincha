@@ -2,16 +2,47 @@
 <html>
 <head>
 	<title></title>
-
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 	<script
   src="https://code.jquery.com/jquery-3.5.1.js"
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   crossorigin="anonymous"></script>
 </head>
-<body>
-	<h2>sadas</h2>
-<div id="seccion">
-
+<style type="text/css">
+	body{
+		background: white;
+	}
+	#conten{
+		position: relative;
+        	
+        	text-transform: uppercase;
+        	
+        	border-radius: 8px;
+        	text-align: center;
+        	margin:  auto;
+        	width: 40%;
+        	height: 40%;
+        	opacity: 90%;
+  			display: table;
+   			align-items: center;
+   			text-align:center;
+   			line-height:150px;font-family: 'Raleway', sans-serif;
+	}	
+	 #seccion p{
+        	color:#595959;
+        display:inline-block;
+		vertical-align:middle;
+		line-height:normal;
+		font-size: 20px;
+		
+		
+        }
+</style>
+<body bgcolor="white">
+	<h2>MENSAJES</h2>
+<div id="conten">
+	<p id="seccion">MENSAJES</p>
+	
 </div>
 </body>
 </html>
@@ -19,8 +50,17 @@
 	$(document).ready(function(){
 		setInterval(
 			function(){
-				$('#seccion').load('prueba.php');
-			},1000
+				$('#seccion').load('prueba.php')
+			},3000
 			);
+	});
+
+$(document).ready(function(){
+		setInterval(
+			function(){
+				$('#seccion').fadeToggle(1400)
+			},1400
+			);
+			
 	});
 </script>
