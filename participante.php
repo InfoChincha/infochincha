@@ -15,12 +15,12 @@ if (!$link) {
 <html>
 <head>
 	<title></title>
-	<script
-  src="https://code.jquery.com/jquery-3.5.1.js"
-  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script>
-	<link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">>
-	 <style type="text/css">
+	<script src="https://code.jquery.com/jquery-3.5.1.js"
+  			integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  			crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
+	
+	<style type="text/css">
     	body{
     		background: white;
     	}
@@ -28,7 +28,7 @@ if (!$link) {
         #cuadro{
             position: relative;
             border-radius: 10px;
-            width:50%;
+            width:30%;
             height: 60px;
             margin-left: auto;
             margin-right: auto;
@@ -100,11 +100,11 @@ if (!$link) {
        
         #nombre p{
         	
-        display:inline-block;
-		vertical-align:middle;
-		line-height:normal;
-		font-size: 20px;
-		font-family: 'Work Sans', sans-serif;
+        	display:inline-block;
+			vertical-align:middle;
+			line-height:normal;
+			font-size: 20px;
+			font-family: 'Work Sans', sans-serif;
 		
         }
 
@@ -140,8 +140,8 @@ if (!$link) {
             border-radius:148px;
             text-align: center;
             vertical-align: middle;
-transition: background 0.3s;
-outline-offset: 0;outline:none
+			transition: background 0.3s;
+			outline-offset: 0;outline:none
         }
         #random:hover{
         	
@@ -175,11 +175,11 @@ outline-offset: 0;outline:none
 		}
 		#nay p{
         	
-        display:inline-block;
-		vertical-align:middle;
-		line-height:normal;
-		font-size: 20px;
-	font-family: 'Work Sans', sans-serif;
+        	display:inline-block;
+			vertical-align:middle;
+			line-height:normal;
+			font-size: 20px;
+			font-family: 'Work Sans', sans-serif;
 		
         }
 
@@ -224,12 +224,12 @@ outline-offset: 0;outline:none
 		<input type="submit" name="random" value="SORTEAR" id="random">
 		</form>
 	
-	<div id="CENTRAL" >
+	<div id="CENTRAL">
 		<div id="numero-aleatorio"><?php echo $ran; ?></div>
    	<?php
    	$consulta= "SELECT * FROM participante";
 	$datos=mysqli_query($link,$consulta);
-	$gana=0;
+	$gana='DNI de ganador'."<br>"."Nombres y Apellidos"."<br>"."Distrito";
 		while ($fila =mysqli_fetch_array($datos)) {
  			$ima=$fila['imagen'];
  			$name=$fila['nombres'];
@@ -254,23 +254,28 @@ mysqli_close($link);
   <style type="text/css">
   	#ganador{
   		position: absolute;
-  		
-  		bottom:45px;
+  		width: 300px;
+  		padding-top:10px;
+  		height: 120px;
+  		bottom:85px;
   		right:15px;
   		font-size: 30px;
   		background:#E4E4E4;
-  		border-radius:8px;
+  		border-radius:8px 8px 0 0;
   		font-family: 'Work Sans', sans-serif;
-  		text-align: center;
+  		text-align: center;font-size: 20px;
   	}
   	#gana{
   		position: relative;
-  		bottom: 15px;
-  		background: white;
-  		color:black;
+  		height: 30px;
+  		background: #4100f7;
+  		color:white;
+  		top:0px;
+  		font-size: 25px;
+  		border-radius:0px 0px 10px 10px;
   	}
   </style>
-	<div id="ganador"><p id="gana">GANADOR</p><?php echo $gana; ?></div>
+	<div id="ganador"><?php echo $gana; ?><p id="gana">GANADOR</p></div>
 	
     
  <!--    <div id="tarjeta">
