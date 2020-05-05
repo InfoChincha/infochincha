@@ -228,13 +228,39 @@ if (!$link) {
         	transition: opacity 0.3s;
         	opacity: 10%;
         }
-        
+        #loadpage{
+        	display: block;
+        	background: #3100bc;
+        	color:white;
+        	width: 100%;
+        	height: 100%;
+        	position: fixed;
+        	top:0;
+        	left:0;
+        	z-index: 1000;
+        }
+        #loadpage p{
+        	display: block;
+        	width: 100px;
+        	height: 30px;
+        	font-size: 40px;
+        	position: absolute;
+        	top:0;
+        	left: 0;
+        	right:  0;
+        	bottom: 0;
+        	text-align: center;
+        	margin:auto;
+        	line-height: 50px;
+        }
         
     </style>
 </head>
 <body>
 	
-
+<span id="loadpage" >
+		<p>CARGANDO</p>
+	</span>
 	<?php 
 		$envio= "SELECT * FROM participante";
 		$consulta=mysqli_query($link,$envio);
