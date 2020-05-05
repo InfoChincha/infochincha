@@ -124,9 +124,8 @@ if (!$link) {
         }
 
         #random{
-        	background: #4100f7;
-        	border:none;
         	color: white;
+        	background: #4100f7;
         	cursor: pointer;
         	position: relative;
         	width:160px;
@@ -137,17 +136,60 @@ if (!$link) {
         	top:60px;
             justify-content: center;
             align-content: center;
-            border-radius:148px;
+           
             text-align: center;
             vertical-align: middle;
-			transition: background 0.3s;
-			outline-offset: 0;outline:none
+			border:none;
+			outline-offset: 0;outline:none;
+			transition: all ease 0.8s;
+
         }
-        #random:hover{
+      /*  #random:hover{
         	
         	background: #B4DB00;
         	color:white;
 
+        }*/
+        .active{
+
+        	animation:rotate 1s ease 0.3s ;
+        }
+        @keyframes rotate{
+        	
+        	0%{
+        		
+        		border-radius:130px;
+        		color:transparent;
+        		background: #B4DB00;
+        	}
+        	
+        }
+        .success{
+        	position:relative;
+        	
+        	animation:bounce 0.3s ease-in;
+        }
+       
+        .sucess:before{
+        	content:'';
+        	position: absolute;
+        	background: url(check-solid.svg)no-repeat;
+        	left:0;
+        	right: 0;
+        	margin:0 auto;
+        	width:31px;
+        	height: 31px;
+        	line-height:31px;
+        	top:8px;
+        }
+       @keyframes bounce{
+        	0%{
+        		
+        		border-radius:130px;
+        		color:transparent;
+        		background: red;
+        	
+        	}
         }
         #numero-aleatorio{
   			position: absolute;
@@ -186,8 +228,9 @@ if (!$link) {
         #nay:hover{
         	transition: opacity 0.3s;
         	opacity: 10%;
-        	
         }
+        
+        
     </style>
 </head>
 <body>
@@ -213,6 +256,23 @@ if (!$link) {
 			$('#cuadro').load('prueba.php')
 			},1000
 			);
+	});
+ 		$(window).on('load',function(){
+		$("#loadpage").delay(200).fadeOut("slow");
+	});
+
+	$(document).ready(function(){
+		$("#random").click(function(){
+			$(this).addClass("active");
+			setTimeout(function(){
+				$("#random").addClass("success");
+			},3000);
+
+			setTimeout(function(){
+				$("#random").removeClass("active");
+				$(".success").removeClass("success");
+			},3000);
+		});
 	});
 	</script>
 	
