@@ -158,8 +158,7 @@ if (!$link) {
         	
         	0%{
         		
-        		border-radius:130px;
-        		color:transparent;
+        		transform:rotate(360deg);
         		background: #B4DB00;
         	}
         	
