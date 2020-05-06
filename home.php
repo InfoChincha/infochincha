@@ -34,7 +34,7 @@ margin: 0px;
             left:0;
             z-index: 1000;
             overflow-x:hidden;
-     overflow-y:hidden;
+            overflow-y:hidden;
         }
         #loadpage p{
             display: block;
@@ -50,29 +50,21 @@ margin: 0px;
             margin:auto;
             
         }
-        .curved-div {
-        background: #3100bc;
-        color: #FFF;
-        text-align: center;
-        }
-        .curved-div h1 {
-        font-size: 6rem;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            }
-            .curved-div p {
-            font-size: 1rem;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            }           
-            .curved-div svg {
-            display: block;
-                }
+      
             .textos{
             background: red;
             }
             img{
                 position: absolute;
-                top:10px;
+                
                 opacity: 10%;
+                display: block;
+                position: absolute;
+                top:0;
+                left: 0;
+                right:  0;
+                bottom: 0;
+                margin:auto;
             }
     </style>
 </head>
@@ -90,7 +82,7 @@ margin: 0px;
 </div>
     <script type="text/javascript">
         $(window).on('load',function(){
-        $("#loadpage").delay(700).fadeOut("slow");
+        $("#loadpage").delay(1500).fadeOut("slow");
     });
     </script>
     <span id="loadpage" >
