@@ -21,9 +21,22 @@ if (!$link) {
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
 	
 	<style type="text/css">
-    	body{
-    		background: #E4E4E4;
-    	}
+		html,
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    background: #E4E4E4;
+}
+body::-webkit-scrollbar{
+	left:10px;
+	width: 7px;
+}
+body::-webkit-scrollbar-thumb{
+	background: #4100f7;
+	border-radius: 10px;
+	border-right: 2px solid #021b79;
+}
 
         #cuadro{
             position: relative;
@@ -380,6 +393,18 @@ mysqli_close($link);
   		font-size: 25px;
   		border-radius:0px 0px 10px 10px;
   	}
+  	footer{
+  		align-self: flex-end;
+  		line-height: 3;
+  		width: 100%;
+    	height: 40px;
+    	position: fixed;
+    	z-index: 1;
+    	bottom: 0;
+    	left: 0;
+    	background: #4100f7;
+    	color:white;
+  	}
   </style>
 	<div id="ganador"><?php echo $gana; ?><p id="gana">GANADOR</p></div>
 	
@@ -392,6 +417,9 @@ mysqli_close($link);
 	</div> -->
 
 </div>
+<footer>
+	Derechos Reservados
+</footer>
 </body>
 
 </html>
