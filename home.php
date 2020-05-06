@@ -13,7 +13,15 @@
     <title>InfoChincha</title>
     <link rel="icon" href="IMG/infochincha_icon.png">
     <style type="text/css">
-    	*{overflow: hidden}
+    	*{overflow: hidden
+
+        }
+        html, body{
+  height:100%
+  margin :0px;border: 0px;
+padding: 0px;
+margin: 0px;
+}
    
     #loadpage{
             display: block;
@@ -25,7 +33,7 @@
             top:0;
             left:0;
             z-index: 1000;
-            overflow-x:scroll;
+            overflow-x:hidden;
      overflow-y:hidden;
         }
         #loadpage p{
@@ -42,37 +50,56 @@
             margin:auto;
             
         }
-
+        .curved-div {
+        background: #3100bc;
+        color: #FFF;
+        text-align: center;
+        }
+        .curved-div h1 {
+        font-size: 6rem;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            .curved-div p {
+            font-size: 1rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }           
+            .curved-div svg {
+            display: block;
+                }
+            .textos{
+            background: red;
+            }
+            img{
+                position: absolute;
+                top:10px;
+                opacity: 10%;
+            }
     </style>
 </head>
 <body background="c.png">
+ 
+<!--     <div class="curved-div">
+  <h1>InfoChincha</h1>
+  <p>
+   Sorteo de la canasta de víveres 2020.
+   Elaborado por InfoChincha.
+  </p>
+  <svg viewBox="0 0 1440 319">
+    <path fill="#fff" fill-opacity="1" d="M0,32L48,80C96,128,192,224,288,224C384,224,480,128,576,90.7C672,53,768,75,864,96C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+  </svg> -->
+</div>
     <script type="text/javascript">
         $(window).on('load',function(){
         $("#loadpage").delay(700).fadeOut("slow");
     });
     </script>
     <span id="loadpage" >
-        <p>InfoChincha</p>
+        <img src="logo.png">
     </span>
-    <header>
-        <div class="container">
-            <div class="textos">
-                <h1>SORTEO CANASTA DE VÍVERES 2020</h1>
-                <h2>InfoChincha</h2>
-                <a href="participante.php">ENTRAR</a>
-            </div>
-            <img src="madre.png" alt="">
-            
-        </div>
-    </header>
-<!--     <div class="wave">
-        <div style="height: 150px; overflow: hidden;" >
-            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-                <path d="M0.00,49.99 C150.00,150.00 349.20,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;">
-                    
-                </path>
-            </svg>
-        </div>
-    </div> -->
+   
+<!-- <object data="ejemplo.svg" type="image/svg+xml">
+  
+  <img src="pis.svg" alt="Imagen PNG alternativa">
+</object> -->
 </body>
 </html>

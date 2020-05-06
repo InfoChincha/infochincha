@@ -30,7 +30,7 @@ body {
 }
 body::-webkit-scrollbar{
 	left:10px;
-	width: 7px;
+	width: 10px;
 }
 body::-webkit-scrollbar-thumb{
 	background: #4100f7;
@@ -404,6 +404,10 @@ mysqli_close($link);
     	left: 0;
     	background: #4100f7;
     	color:white;
+    	font-family: 'Work Sans', sans-serif; justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            text-align: center;
   	}
   </style>
 	<div id="ganador"><?php echo $gana; ?><p id="gana">GANADOR</p></div>
@@ -418,7 +422,7 @@ mysqli_close($link);
 
 </div>
 <footer>
-	Derechos Reservados
+	InfoChincha Contigo
 </footer>
 </body>
 
