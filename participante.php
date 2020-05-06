@@ -296,12 +296,14 @@ body::-webkit-scrollbar-thumb{
 	
 
 	<?php 
-		$envio= "SELECT * FROM participante";
+		//$envio= "select * from participante where descripcion !='N' and descripcion !='NULL'";
+		 $envio="select * from participante where distrito !='TAMBO DE MORA' and distrito!='SAN JUAN DE YANAC'";
 		$consulta=mysqli_query($link,$envio);
 		$ran="0";	
 		if (isset($_POST['random'])) 
-			{	$ran=rand(10,300);;
+			{	
 				while ($fila =mysqli_fetch_array($consulta)) {
+ 				
  				$i=$fila['id'];
 			}	
 				$ran=rand(10,$i);
@@ -346,7 +348,7 @@ body::-webkit-scrollbar-thumb{
 	<div id="CENTRAL">
 		<div id="numero-aleatorio"><?php echo $ran; ?></div>
    	<?php
-   	$consulta= "SELECT * FROM participante";
+   	$consulta= "select * from participante where distrito !='TAMBO DE MORA' and distrito!='SAN JUAN DE YANAC'";
 	$datos=mysqli_query($link,$consulta);
 	$gana='DNI de ganador'."<br>"."Nombres y Apellidos"."<br>"."Distrito";
 		while ($fila =mysqli_fetch_array($datos)) {
