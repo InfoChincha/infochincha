@@ -22,7 +22,7 @@ if (!$link) {
 	
 	<style type="text/css">
     	body{
-    		background: white;
+    		background: #E4E4E4;
     	}
 
         #cuadro{
@@ -123,52 +123,82 @@ if (!$link) {
     		border-radius: 10px;
         }
 
-        #random{
-        	color: white;
-        	background: #4100f7;
+  /*      #random{
+        	color: #4100f7;
+        	border: 2px solid #4100f7;
         	cursor: pointer;
+        	border-radius:8px;
         	position: relative;
-        	width:160px;
-        	height: 160px;
+        	width: 220px;
+        	height: 60px;
         	margin:0 auto;
         	display: flex;
-        	font-size: 30px;
+        	font-size: 20px;
         	top:60px;
             justify-content: center;
             align-content: center;
            
             text-align: center;
             vertical-align: middle;
-			border:none;
+			text-transform: uppercase;
+        	text-align:center;
+        	text-decoration: none;
 			outline-offset: 0;outline:none;
 			transition: all ease 0.8s;
 
-        }
+        }*/
       /*  #random:hover{
         	
         	background: #B4DB00;
         	color:white;
 
         }*/
+       .button{
+       	position: relative;
+        	display: flex;
+        	width: 220px;
+        	height: 60px;
+        	border:2px solid #4100f7;
+        	color: #4100f7;
+        	font-size: 20px;
+        	font-weight: bold;
+        	text-transform: uppercase;
+        	text-align:center;
+        	text-decoration: none;
+        	justify-content: center;
+            align-content: center;
+        	line-height: 56px;
+        	box-sizing: border-box;
+        	border-radius:50px;
+        	background-color: transparent;
+        	outline:none;
+        	margin:0 auto;
+        	top:70px;
+        	transition: all ease 0.5s;cursor: pointer;
+        }
         .active{
-
-        	animation:rotate 1s ease 0.3s ;
+        	font-size: 0;
+        	width: 50px;
+        	height: 50px;
+        	border-radius:50px;
+        	border-left-color:transparent;
+        	animation:rotate 0.5s ease 0.5s infinite;
         }
         @keyframes rotate{
-        	
         	0%{
-        		
         		transform:rotate(360deg);
-        		background: #B4DB00;
         	}
-        	
         }
         .success{
         	position:relative;
-        	
+        	background: #fff;
         	animation:bounce 0.3s ease-in;
         }
-       
+        @keyframes bounce{
+        	0%{
+        		transform: scale(0.9);
+        	}
+        }
         .sucess:before{
         	content:'';
         	position: absolute;
@@ -181,22 +211,13 @@ if (!$link) {
         	line-height:31px;
         	top:8px;
         }
-       @keyframes bounce{
-        	0%{
-        		
-        		border-radius:130px;
-        		color:transparent;
-        		background: red;
-        	
-        	}
-        }
         #numero-aleatorio{
   			position: absolute;
   			font-size:150px;
   			font-weight: 700;
   			text-align:center;
   			left: 20px;
-  			bottom:50px;
+  			bottom:30px;
   			color:#4100f7;user-select: none;font-family: 'Work Sans', sans-serif;
   			
 		}
@@ -238,6 +259,8 @@ if (!$link) {
         	top:0;
         	left:0;
         	z-index: 1000;
+        	overflow-x:scroll;
+     overflow-y:hidden;
         }
         #loadpage p{
         	display: block;
@@ -258,9 +281,7 @@ if (!$link) {
 </head>
 <body>
 	
-<span id="loadpage" >
-		<p>CARGANDO</p>
-	</span>
+
 	<?php 
 		$envio= "SELECT * FROM participante";
 		$consulta=mysqli_query($link,$envio);
@@ -283,18 +304,18 @@ if (!$link) {
 			);
 	});
  		$(window).on('load',function(){
-		$("#loadpage").delay(200).fadeOut("slow");
+		$("#loadpage").delay(700).fadeOut("slow");
 	});
 
 	$(document).ready(function(){
-		$("#random").click(function(){
+		$(".button").click(function(){
 			$(this).addClass("active");
 			setTimeout(function(){
-				$("#random").addClass("success");
+				$(".button").addClass("success");
 			},3000);
 
 			setTimeout(function(){
-				$("#random").removeClass("active");
+				$(".button").removeClass("active");
 				$(".success").removeClass("success");
 			},3000);
 		});
@@ -306,7 +327,7 @@ if (!$link) {
    	</div>
 	 
    	<form action="participante.php" method="post">
-		<input type="submit" name="random" value="SORTEAR" id="random">
+		<input type="submit" name="random" value="SORTEAR" class="button">
 		</form>
 	
 	<div id="CENTRAL">
@@ -342,10 +363,10 @@ mysqli_close($link);
   		width: 300px;
   		padding-top:10px;
   		height: 120px;
-  		bottom:85px;
+  		bottom:35px;
   		right:15px;
   		font-size: 30px;
-  		background:#E4E4E4;
+  		background:white;
   		border-radius:8px 8px 0 0;
   		font-family: 'Work Sans', sans-serif;
   		text-align: center;font-size: 20px;
