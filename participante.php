@@ -304,19 +304,20 @@ body::-webkit-scrollbar-thumb{
 	}
 	#botonReiniciar{
 		position: relative;
-		border:none;
+		border:1px solid white;
 		color:#4100f7;
 		padding:5px;
 		background: white;
 		top:40px;
-		border-radius:10px;
+		border-radius:18px;outline:none;cursor: pointer;
+
 	}
+	
 	#cronometro{
 		position: absolute;
   		top: 45%; left: 50%;
   		transform: translate(-50%,-50%);
  		color:white;font-family: 'Work Sans', sans-serif;font-size:30px;
-
 	}
     </style>
 </head>

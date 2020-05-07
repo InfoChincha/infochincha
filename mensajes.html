@@ -68,7 +68,7 @@
 	ul{
 		list-style: none;
 		padding-left: 10px;
-		animation: cambiar 3s infinite;
+		animation: cambiar 2s infinite;
 	}
 
 	ul,p{
@@ -104,83 +104,21 @@
 		}
 
 	}
-	#crono{
-		background: #4100f7;
-		position: relative;
-		width:220px;
-		height: 220px;
-		border-radius:130px;
-		align-items: center;
-		align-self: center;
-		align-content: center;
-		text-align: center;
-		font-family: 'Raleway', sans-serif;
-		margin:0px auto;
-	}
-	#botonReiniciar{
-		position: relative;
-		border:none;
-		color:#4100f7;
-		padding:5px;
-		background: white;
-		top:160px;
 
-	}
-	#cronometro{
-		position: absolute;
-  		top: 45%; left: 50%;
-  		transform: translate(-50%,-50%);
- 		color:white;font-family: 'Work Sans', sans-serif;
-	}
 </style>
 	<div class="contenedor">
-		<p>HOLA</p>
+		<!-- <p>HOLA</p> -->
 		<ul>
 			<li>mundo</li>
-			<li>user</li>
+			<li>cc</li>
 			<li>colega</li>
-			<li>colega</li>
-			<li>colega</li>
+			<li>s</li>
+			<li>colcega</li>
 		</ul>
 	</div>
-   <div id="crono">
-   	 <input id="botonReiniciar" type="button" value="EMPEZAR" />
-    <div id="cronometro" style="font-size:80px;">00:00</div>
-   </div>
+  
 
-<script type="text/javascript">
-	    var inicioConteo,
-    idTimeout,
-    cronometro = document.querySelector('#cronometro'),
-    botonReiniciar = document.querySelector('#botonReiniciar');
 
-    function zeroIzq(n){
-        return n.toString().replace(/^(\d)$/,'0$1');
-    }
-
-    function formatoSegundos(s){
-        return zeroIzq(Math.floor(s%3600 / 60))+':'+zeroIzq(Math.floor((s%3600)%60));
-    }
-
-    function actualizar(){
-        var dif = Date.now() - inicioConteo;
-        dif = Math.round(dif / 1000);
-        cronometro.innerHTML = formatoSegundos(dif);
-        idTimeout = setTimeout(actualizar,1000);
-    }
-
-    function iniciar(){
-        clearTimeout(idTimeout);
-        inicioConteo = Date.now();
-        actualizar();
-    }
-
-    botonReiniciar.onclick = function(){
-        iniciar();
-    }
-
-    
-</script>
 
 </body>
 </html>

@@ -39,9 +39,9 @@ margin: 0px;
         }
         #loadpage p{
             display: block;
-            width: 140px;
-            height: 30px;
-            font-size: 20px;
+            width: 100%;
+            height: 150px;
+            font-size: 120px;
             position: absolute;
             top:0;
             left: 0;
@@ -49,6 +49,7 @@ margin: 0px;
             bottom: 0;
             text-align: center;
             margin:auto;
+            color:white;
             
         }
       
@@ -120,7 +121,7 @@ margin: 0px;
 </div>
     <script type="text/javascript">
         $(window).on('load',function(){
-        $("#loadpage").delay(100).fadeOut("slow");
+        $("#loadpage").delay(1500).fadeOut("slow");
     });
     </script>
     <span id="loadpage" >

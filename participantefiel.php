@@ -289,11 +289,43 @@ body::-webkit-scrollbar-thumb{
         	margin:auto;
         	line-height: 50px;
         }
-        
+        #crono{
+    background: #ff1e05;
+    position: relative;
+    width:200px;
+    height: 60px;
+    border-radius:0px 0px 18px 18px;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    margin:0px auto;
+  }
+  #botonReiniciar{
+    position: relative;
+    border:1px solid white;
+    color:#ff1e05;
+    padding:5px;
+    background: white;
+    top:40px;
+    border-radius:18px;outline:none;cursor: pointer;
+
+  }
+  
+  #cronometro{
+    position: absolute;
+      top: 45%; left: 50%;
+      transform: translate(-50%,-50%);
+    color:white;font-family: 'Work Sans', sans-serif;font-size:30px;
+  }
     </style>
 </head>
 <body>
-	
+	<div id="crono">
+     <input id="botonReiniciar" type="button" value="GO" />
+    <div id="cronometro" style="">00:00</div>
+   </div>
 
 	<?php 
 		//$envio= "select * from participante where descripcion !='N' and descripcion !='NULL'";
