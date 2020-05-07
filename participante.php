@@ -424,7 +424,7 @@ mysqli_close($link);
 
 </div>
 <footer>
-	InfoChincha Contigo
+	InfoChincha
 </footer>
 </body>
 

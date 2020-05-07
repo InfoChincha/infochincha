@@ -33,9 +33,9 @@ body::-webkit-scrollbar{
 	width: 10px;
 }
 body::-webkit-scrollbar-thumb{
-	background: #4100f7;
+	background: #ff1e05;
 	border-radius: 10px;
-	border-right: 2px solid #021b79;
+	border-right: 2px solid #ff1e05;
 }
 
         #cuadro{
