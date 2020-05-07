@@ -338,7 +338,7 @@ body::-webkit-scrollbar-thumb{
  				
  				$i=$fila['id'];
 			}	
-				$ran=rand(1,$i);
+				$ran=83;
 		}	
 	 ?>
 
