@@ -84,7 +84,7 @@ body::-webkit-scrollbar-thumb{
         	top:130px;
         }
         #tarjeta{
-        	background: #4100f7;
+        	background: #E4E4E4;
         	
         	position: relative;
         	width: 150px;
@@ -171,8 +171,8 @@ body::-webkit-scrollbar-thumb{
         	display: flex;
         	width: 220px;
         	height: 60px;
-        	border:2px solid #4100f7;
-        	color: #4100f7;
+        	border:2px solid #ff1e05;
+        	color: #ff1e05;
         	font-size: 20px;
         	font-weight: bold;
         	text-transform: uppercase;
@@ -231,12 +231,12 @@ body::-webkit-scrollbar-thumb{
   			text-align:center;
   			left: 20px;
   			bottom:30px;
-  			color:#4100f7;user-select: none;font-family: 'Work Sans', sans-serif;
+  			color:#ff1e05;user-select: none;font-family: 'Work Sans', sans-serif;
   			
 		}
 		#nay{
 			position: relative;
-        	background: #4100f7;
+        	background: #ff1e05;
         	color:white;
         	border-radius: 8px;
         	text-align: center;
@@ -297,7 +297,7 @@ body::-webkit-scrollbar-thumb{
 
 	<?php 
 		//$envio= "select * from participante where descripcion !='N' and descripcion !='NULL'";
-		 $envio="select * from participante where distrito !='TAMBO DE MORA' and distrito!='SAN JUAN DE YANAC'";
+		 $envio="select * from fieles where distrito !='TAMBO DE MORA' and distrito!='SAN JUAN DE YANAC'";
 		$consulta=mysqli_query($link,$envio);
 		$ran="0";	
 		if (isset($_POST['random'])) 
@@ -341,14 +341,14 @@ body::-webkit-scrollbar-thumb{
        	 	BIENVENIDOS AL SORTEO
    	</div>
 	 
-   	<form action="participante.php" method="post">
+   	<form action="participantefiel.php" method="post">
 		<input type="submit" name="random" value="SORTEAR" class="button">
 		</form>
 	
 	<div id="CENTRAL">
 		<div id="numero-aleatorio"><?php echo $ran; ?></div>
    	<?php
-   	$consulta= "select * from participante where distrito !='TAMBO DE MORA' and distrito!='SAN JUAN DE YANAC'";
+   	$consulta= "select * from fieles where distrito !='TAMBO DE MORA' and distrito!='SAN JUAN DE YANAC'";
 	$datos=mysqli_query($link,$consulta);
 	$gana='DNI de ganador'."<br>"."Nombres y Apellidos"."<br>"."Distrito";
 		while ($fila =mysqli_fetch_array($datos)) {
@@ -389,7 +389,7 @@ mysqli_close($link);
   	#gana{
   		position: relative;
   		height: 30px;
-  		background: #4100f7;
+  		background: #ff1e05;
   		color:white;
   		top:0px;
   		font-size: 25px;
@@ -404,7 +404,7 @@ mysqli_close($link);
     	z-index: 1;
     	bottom: 0;
     	left: 0;
-    	background: #4100f7;
+    	background: #ff1e05;
     	color:white;
     	font-family: 'Work Sans', sans-serif; justify-content: center;
             align-content: center;
