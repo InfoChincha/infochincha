@@ -289,14 +289,45 @@ body::-webkit-scrollbar-thumb{
         	margin:auto;
         	line-height: 50px;
         }
-        
+    #crono{
+		background: #4100f7;
+		position: relative;
+		width:200px;
+		height: 60px;
+		border-radius:0px 0px 18px 18px;
+		align-items: center;
+		align-self: center;
+		align-content: center;
+		text-align: center;
+		font-family: 'Raleway', sans-serif;
+		margin:0px auto;
+	}
+	#botonReiniciar{
+		position: relative;
+		border:none;
+		color:#4100f7;
+		padding:5px;
+		background: white;
+		top:40px;
+		border-radius:10px;
+	}
+	#cronometro{
+		position: absolute;
+  		top: 45%; left: 50%;
+  		transform: translate(-50%,-50%);
+ 		color:white;font-family: 'Work Sans', sans-serif;font-size:30px;
+
+	}
     </style>
 </head>
 <body>
-	
+	 <div id="crono">
+   	 <input id="botonReiniciar" type="button" value="GO" />
+    <div id="cronometro" style="">00:00</div>
+   </div>
 
 	<?php 
-		//$envio= "select * from participante where descripcion !='N' and descripcion !='NULL'";
+		
 		 $envio="select * from participante where distrito !='TAMBO DE MORA' and distrito!='SAN JUAN DE YANAC'";
 		$consulta=mysqli_query($link,$envio);
 		$ran="0";	
@@ -335,6 +366,38 @@ body::-webkit-scrollbar-thumb{
 			},3000);
 		});
 	});
+
+	    var inicioConteo,
+    idTimeout,
+    cronometro = document.querySelector('#cronometro'),
+    botonReiniciar = document.querySelector('#botonReiniciar');
+
+    function zeroIzq(n){
+        return n.toString().replace(/^(\d)$/,'0$1');
+    }
+
+    function formatoSegundos(s){
+        return zeroIzq(Math.floor(s%3600 / 60))+':'+zeroIzq(Math.floor((s%3600)%60));
+    }
+
+    function actualizar(){
+        var dif = Date.now() - inicioConteo;
+        dif = Math.round(dif / 1000);
+        cronometro.innerHTML = formatoSegundos(dif);
+        idTimeout = setTimeout(actualizar,1000);
+    }
+
+    function iniciar(){
+        clearTimeout(idTimeout);
+        inicioConteo = Date.now();
+        actualizar();
+    }
+
+    botonReiniciar.onclick = function(){
+        iniciar();
+    }
+
+  
 	</script>
 	
 	<div id="cuadro">

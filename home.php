@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=7">
     <script
@@ -66,32 +67,65 @@ margin: 0px;
                 bottom: 0;
                 margin:auto;
             }
+            *{
+            font-family: 'Raleway', sans-serif;
+        }
+        .caja{
+            
+            position: relative;
+            width:600px;
+            height: 700px;
+            left:  890px;
+            
+            margin-right: 0;
+            top:190px;
+        }
+        h1{
+            font-size: 100px;
+            color:#4100f7;font-family: 'Righteous', cursive;
+            letter-spacing: 5px;
+            user-select: none;
+        }
+        p{
+            position: relative;
+            bottom:40px;
+            font-size: 20px;
+            color:#5C5C5C;
+            user-select: none;
+        }
+        a{
+            position: relative;
+            text-decoration: none;
+            color:#4100f7;
+            border:#4100f7 solid;
+            padding: 10px;
+            border-radius:8px;
+            transition: all 0.3s;
+        }
+        a:hover{
+            background: #4100f7;
+            color:white;
+        }
     </style>
 </head>
-<body background="c.png">
- 
-<!--     <div class="curved-div">
-  <h1>InfoChincha</h1>
+<body background="c.png">   
+    <div class="caja">
+  <h1>GRAN <br>SORTEO</h1>
   <p>
    Sorteo de la canasta de víveres 2020.
-   Elaborado por InfoChincha.
+   <br>Elaborado por InfoChincha.
   </p>
-  <svg viewBox="0 0 1440 319">
-    <path fill="#fff" fill-opacity="1" d="M0,32L48,80C96,128,192,224,288,224C384,224,480,128,576,90.7C672,53,768,75,864,96C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-  </svg> -->
+  <a href="participante.php">ENTRAR AL SORTEO</a>
+
 </div>
     <script type="text/javascript">
         $(window).on('load',function(){
-        $("#loadpage").delay(1500).fadeOut("slow");
+        $("#loadpage").delay(100).fadeOut("slow");
     });
     </script>
     <span id="loadpage" >
-        <img src="logo.png">
+        <p>BIENVENIDO</p>
     </span>
-   
-<!-- <object data="ejemplo.svg" type="image/svg+xml">
-  
-  <img src="pis.svg" alt="Imagen PNG alternativa">
-</object> -->
+
 </body>
 </html>
