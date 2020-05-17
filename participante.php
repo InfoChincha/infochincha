@@ -19,356 +19,35 @@ if (!$link) {
   			integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   			crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
-	
-	<style type="text/css">
-		html,
-body {
-    margin: 0px;
-    padding: 0px;
-    height: 100%;
-    background: #E4E4E4;
-}
-body::-webkit-scrollbar{
-	left:10px;
-	width: 10px;
-}
-body::-webkit-scrollbar-thumb{
-	background: #4100f7;
-	border-radius: 10px;
-	border-right: 2px solid #021b79;
-}
-
-        #cuadro{
-            position: relative;
-            border-radius: 10px;
-            width:30%;
-            height: 60px;
-            margin-left: auto;
-            margin-right: auto;
-            top: 20px;
-            bottom: auto;
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            flex-direction: column;
-            background-color:#393939;
-            text-align: center;
-            font-size: 20px;font-family: 'Work Sans', sans-serif;
-            -webkit-animation-name: animacion1;
-            -webkit-animation-duration:3s;
-            -webkit-animation-iteration-count:infinite;
-            -webkit-animation-direction:alternate;
-            -webkit-animation-timing-function:ease-in-out;
-            color:white;
-            /*-webkit-animation-delay:1s;*/
-
-        }
-/*        @-webkit-keyframes animacion1{
-            0%{
-                left:-100px;
-               
-            }
-           
-            100%{
-                left:150px;
-                
-                
-            }
-        }
-*/
-        #CENTRAL{
-        	position: relative;
-        	background: blue; 
-        	width:1380px;
-        	margin:0 auto;
-        	top:130px;
-        }
-        #tarjeta{
-        	background: #4100f7;
-        	
-        	position: relative;
-        	width: 150px;
-        	height: 150px;
-        	float:left;
-        	border-radius:8px;
-        	margin-left:20px;
-        	margin-bottom:20px;
-        }
-        
-        #nombre{
-        	position: relative;
-        	background: #5C5C5C;
-        	color:white;
-        	border-radius: 8px;
-        	text-align: center;
-        	width: 100%;
-        	height: 100%;
-        	opacity: 90%;
-  			display: table;
-   			align-items: center;
-   			text-align:center;
-   			line-height:150px;
-        }
-        
-       
-        #nombre p{
-        	
-        	display:inline-block;
-			vertical-align:middle;
-			line-height:normal;
-			font-size: 20px;
-			font-family: 'Work Sans', sans-serif;
-		
-        }
-
-        #nombre:hover{
-        	transition: opacity 0.3s;
-        	opacity: 10%;
-        	
-        }
-        img{
-        	position:absolute;
-        	width: 150px;
-        	height: 150px;
-        	display: table-cell;
-        	vertical-align:middle;
-    		text-align:center;
-    		border-radius: 10px;
-        }
-
-  /*      #random{
-        	color: #4100f7;
-        	border: 2px solid #4100f7;
-        	cursor: pointer;
-        	border-radius:8px;
-        	position: relative;
-        	width: 220px;
-        	height: 60px;
-        	margin:0 auto;
-        	display: flex;
-        	font-size: 20px;
-        	top:60px;
-            justify-content: center;
-            align-content: center;
-           
-            text-align: center;
-            vertical-align: middle;
-			text-transform: uppercase;
-        	text-align:center;
-        	text-decoration: none;
-			outline-offset: 0;outline:none;
-			transition: all ease 0.8s;
-
-        }*/
-      /*  #random:hover{
-        	
-        	background: #B4DB00;
-        	color:white;
-
-        }*/
-       .button{
-       	position: relative;
-        	display: flex;
-        	width: 220px;
-        	height: 60px;
-        	border:2px solid #4100f7;
-        	color: #4100f7;
-        	font-size: 20px;
-        	font-weight: bold;
-        	text-transform: uppercase;
-        	text-align:center;
-        	text-decoration: none;
-        	justify-content: center;
-            align-content: center;
-        	line-height: 56px;
-        	box-sizing: border-box;
-        	border-radius:50px;
-        	background-color: transparent;
-        	outline:none;
-        	margin:0 auto;
-        	top:70px;
-        	transition: all ease 0.5s;cursor: pointer;
-        }
-        .active{
-        	font-size: 0;
-        	width: 50px;
-        	height: 50px;
-        	border-radius:50px;
-        	border-left-color:transparent;
-        	animation:rotate 0.5s ease 0.5s infinite;
-        }
-        @keyframes rotate{
-        	0%{
-        		transform:rotate(360deg);
-        	}
-        }
-        .success{
-        	position:relative;
-        	background: #fff;
-        	animation:bounce 0.3s ease-in;
-        }
-        @keyframes bounce{
-        	0%{
-        		transform: scale(0.9);
-        	}
-        }
-        .sucess:before{
-        	content:'';
-        	position: absolute;
-        	background: url(check-solid.svg)no-repeat;
-        	left:0;
-        	right: 0;
-        	margin:0 auto;
-        	width:31px;
-        	height: 31px;
-        	line-height:31px;
-        	top:8px;
-        }
-        #numero-aleatorio{
-  			position: absolute;
-  			font-size:150px;
-  			font-weight: 700;
-  			text-align:center;
-  			left: 20px;
-  			bottom:30px;
-  			color:#4100f7;user-select: none;font-family: 'Work Sans', sans-serif;
-  			
-		}
-		#nay{
-			position: relative;
-        	background: #4100f7;
-        	color:white;
-        	border-radius: 8px;
-        	text-align: center;
-        	width: 100%;
-        	height: 100%;
-        	opacity: 90%;
-  			display: table;
-   			align-items: center;
-   			text-align:center;
-   			line-height:150px;
-		}
-		#nay p{
-        	
-        	display:inline-block;
-			vertical-align:middle;
-			line-height:normal;
-			font-size: 20px;
-			font-family: 'Work Sans', sans-serif;
-		
-        }
-
-        #nay:hover{
-        	transition: opacity 0.3s;
-        	opacity: 10%;
-        }
-        #loadpage{
-        	display: block;
-        	background: #3100bc;
-        	color:white;
-        	width: 100%;
-        	height: 100%;
-        	position: fixed;
-        	top:0;
-        	left:0;
-        	z-index: 1000;
-        	overflow-x:scroll;
-     overflow-y:hidden;
-        }
-        #loadpage p{
-        	display: block;
-        	width: 100px;
-        	height: 30px;
-        	font-size: 40px;
-        	position: absolute;
-        	top:0;
-        	left: 0;
-        	right:  0;
-        	bottom: 0;
-        	text-align: center;
-        	margin:auto;
-        	line-height: 50px;
-        }
-    #crono{
-		background: #4100f7;
-		position: relative;
-		width:200px;
-		height: 60px;
-		border-radius:0px 0px 18px 18px;
-		align-items: center;
-		align-self: center;
-		align-content: center;
-		text-align: center;
-		font-family: 'Raleway', sans-serif;
-		margin:0px auto;
-	}
-	#botonReiniciar{
-		position: relative;
-		border:1px solid white;
-		color:#4100f7;
-		padding:5px;
-		background: white;
-		top:40px;
-		border-radius:18px;outline:none;cursor: pointer;
-
-	}
-	
-	#cronometro{
-		position: absolute;
-  		top: 45%; left: 50%;
-  		transform: translate(-50%,-50%);
- 		color:white;font-family: 'Work Sans', sans-serif;font-size:30px;
-	}
-    </style>
+  <link rel="stylesheet" type="text/css" href="participante.css">
 </head>
-<body>
-	 <div id="crono">
-   	 <input id="botonReiniciar" type="button" value="GO" />
-    <div id="cronometro" style="">00:00</div>
-   </div>
+  <script type="text/javascript">
+    $(document).ready(function(){
+    setInterval(
+    function(){
+      $('#cuadro').load('prueba.php')
+      },1000
+      );
+  });
+    $(window).on('load',function(){
+    $("#loadpage").delay(700).fadeOut("slow");
+  });
 
-	<?php 
-		
-		 $envio="select * from participante where distrito !='TAMBO DE MORA' and distrito!='SAN JUAN DE YANAC'";
-		$consulta=mysqli_query($link,$envio);
-		$ran="0";	
-		if (isset($_POST['random'])) 
-			{	
-				while ($fila =mysqli_fetch_array($consulta)) {
- 				
- 				$i=$fila['id'];
-			}	
-				$ran=219;
-		}	
-	 ?>
+  $(document).ready(function(){
+    $(".button").click(function(){
+      $(this).addClass("active");
+      setTimeout(function(){
+        $(".button").addClass("success");
+      },3000);
 
-	<script type="text/javascript">
- 		$(document).ready(function(){
-		setInterval(
-		function(){
-			$('#cuadro').load('prueba.php')
-			},1000
-			);
-	});
- 		$(window).on('load',function(){
-		$("#loadpage").delay(700).fadeOut("slow");
-	});
+      setTimeout(function(){
+        $(".button").removeClass("active");
+        $(".success").removeClass("success");
+      },3000);
+    });
+  });
 
-	$(document).ready(function(){
-		$(".button").click(function(){
-			$(this).addClass("active");
-			setTimeout(function(){
-				$(".button").addClass("success");
-			},3000);
-
-			setTimeout(function(){
-				$(".button").removeClass("active");
-				$(".success").removeClass("success");
-			},3000);
-		});
-	});
-
-	    var inicioConteo,
+      var inicioConteo,
     idTimeout,
     cronometro = document.querySelector('#cronometro'),
     botonReiniciar = document.querySelector('#botonReiniciar');
@@ -399,7 +78,29 @@ body::-webkit-scrollbar-thumb{
     }
 
   
-	</script>
+  </script>
+<body>
+	 <div id="crono">
+   	 <input id="botonReiniciar" type="button" value="GO" />
+    <div id="cronometro" style="">00:00</div>
+   </div>
+
+	<?php 
+		
+		 $envio="select * from participante";
+		$consulta=mysqli_query($link,$envio);
+		$ran="0";	
+		if (isset($_POST['random'])) 
+			{	
+				while ($fila =mysqli_fetch_array($consulta)) {
+ 				
+ 				$i=$fila['id'];
+			}	
+				$ran=219;
+		}	
+	 ?>
+
+
 	
 	<div id="cuadro">
        	 	BIENVENIDOS AL SORTEO
